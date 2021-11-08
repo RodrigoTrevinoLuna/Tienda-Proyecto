@@ -1,0 +1,232 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*Colores*/
+:root{
+    --azulRey:rgb(4, 4, 77);
+        /* LAGOON*/
+    --PrimerColor:#26798E;
+    --SegColor:#63CAA7 ;
+    --TerColor:#FFC172;
+    --CuarColor:#FFE3B3;
+    /* PALM*/
+    --bg-P:#002973;
+    --bg-S:#155db1;
+    --bg-T:#2196f3;
+    --bg-C:#FBE4A3;
+    --bg-Q:#b9ffff;
+
+}
+body{
+    background:#d3cece46;;
+}
+
+/*Posicion de los componentes*/
+.container{
+    display: flex;
+    height: 100vh;
+}
+    .menuBar{
+        background: var(--bg-P);
+        border-radius: 0px 12px 12px 0px;
+        width: 4%;
+        color: var(--bg-T);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 3px 3px #888888;
+    }
+    .listadoCarrito{
+        width: 76%;
+        padding: 15px;
+        
+    }
+    .interracionVenta{
+        background: grey;
+        padding: 15px;
+        width: 20%;
+        border-radius: 20px 0px 0px 20px;
+        color: white;
+        
+    }
+
+/*Estilos MENUBAR*/
+
+    .principal{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 60vh;
+        padding-top:20px ;
+    }
+    .principal>a>img, .secundario>a>img{
+        width: 20px;
+        padding: 7px;
+        background: whitesmoke;
+        border-radius: 5px;
+        border: #888888 1px solid;
+
+    }
+    .principal>a, .secundario>a{
+        width: 5px;
+        padding-left: 7px;
+        
+    }
+    .principal>a>img:hover, .secundario>a>img:hover{
+        background: #888888;
+        border: black 1px solid;
+        
+    }
+    
+    .secundario{
+        padding-bottom: 7px;
+    }
+
+a{
+    display: flex;
+}
+
+a p{
+    display: none;
+    position: absolute;
+    left: 50px;
+}
+a:hover p{
+    display: block;
+    z-index: 1;
+
+    background: #888888;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border:1px solid white;
+}
+                /*Cambiar color a blanco: filtro botones*/
+                .principal a>img:hover {
+                    filter: invert(100%);
+                    
+                }
+                .secundario a{
+                    width: 100vh;
+                }
+                .secundario a>img:hover{
+                    filter: invert(100%);
+                }
+
+/* Estilos Carrito*/
+   .titulo{
+       text-align: center;
+   }
+
+    .producto{
+        box-shadow: 2px 2px #888888;
+        border-radius: 15px;
+        height: 20px;
+        padding: 5px 0px 5px 20px;
+        background: rgba(128, 128, 128, 0.26);
+        font-size: 15px;
+        
+        outline-color: grey;
+        border: 1.5px var(--bg-P) solid;
+    }
+    .clave{
+        font-size: 21px;
+    }
+   table{
+    width: 100%; 
+       border-bottom: grey 1px solid;
+       background: rgba(128, 128, 128, 0.26);
+       box-shadow: 2px 2px #888888;
+       border-radius: 5px;
+       
+   }
+   .nameP{
+       width: 50%;
+   }
+   .unidadN{
+       width: 12.5%;
+       text-align: center;
+   }
+   thead>tr>td{
+       border-bottom: solid 1px grey;
+       background: var(--bg-P);
+       padding: 7px;
+       color: white;
+       border-radius: 5px;
+       
+   }
+
+   tbody>tr>td{
+       border-right: grey 1px solid;
+       padding: 5px;
+       text-align: center;
+       
+       
+       
+   
+        
+   }
+
+   tbody>tr:hover{
+       background: grey;
+       color: white;
+   }
+   .P{
+        border-left: 1px solid grey;
+        text-align: left;
+
+   }
+
+   .contenedor-secundario{
+       padding-bottom: 15px;
+   }
+
+/*Interaccion Venta*/
+.txtTitulo{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.textboxTotal{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 45px;
+    border-radius:15px ;
+}
+.opciones{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 45px;
+}
+.opciones>button{
+    width: 47.5%;
+    height: 95px;
+    margin: 3px;
+    
+}
+
+.opciones>button:hover{
+    background: rgba(146, 145, 145, 0.541);
+    color: white;
+    border: white 1.5px solid;
+    cursor: pointer;
+}
+.btn-opcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.opciones>button>img{
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+}
+.logo{
+    width: 100%;
+    height: 170px;
+    margin: 3px;
+    border-radius: 10px;
+}
