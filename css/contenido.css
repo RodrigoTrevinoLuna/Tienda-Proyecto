@@ -49,6 +49,19 @@ body{
         color: white;
         
     }
+    /*Estilos del titulo*/
+    .titulo{
+        padding-left: 20px !important;
+        background: #002973 !important;
+        width: max-content !important;
+        color: white !important;
+        border-radius: 0px 12px 500px 0px !important;
+        padding-top: 20px !important;
+        padding-bottom: 15px !important;
+        padding-right: 37px !important;
+        box-shadow: 0px 10px  #888888 !important;
+        
+        }
 
 /*Estilos MENUBAR*/
 
@@ -112,3 +125,17 @@ a:hover p{
                 .secundario a>img:hover{
                     filter: invert(100%);
                 }
+
+/* Posicion de los elementos Para las Plantillas 
+                NO MOVERLE AL CODIGO
+                MOVER-CODIGO == CAGADA XD
+                |   |  |   |
+                V   V  V   V  
+*/
+
+.contenedor-secundario{
+    display: flex;
+    width: 100vw;
+}
+
+
