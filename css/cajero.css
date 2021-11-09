@@ -185,11 +185,12 @@ a:hover p{
     padding-top: 45px;
 }
 .opciones>button{
-    width: 47.5%;
+    width: 50%;
     height: 95px;
-    margin: 3px;
+    
     
 }
+
 
 .opciones>button:hover{
     background: rgba(146, 145, 145, 0.541);
@@ -214,4 +215,5 @@ a:hover p{
     height: 170px;
     margin: 3px;
     border-radius: 10px;
+    padding-top: 15px;
 }
