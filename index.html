@@ -1,130 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!--
-        Se desarrollara por "Componentes"
-            llamase componente a cada parte del sitio web(ejemplo: MenuBar, Listado-Carrito, InteraccionVenta)
-    -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
 
-    <div class="container">
-<!--***********************************************************************************-->
-            <!-- INICIO MENUBAR-->
-                <div class="menuBar">
-                        
-                             <ul class="principal">
-                                <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
-                                <a href="#"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
-                                <a href="#"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
-                                <a href="#"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
-                                <a href="#"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
-                                <a href="#"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
-                                <a href="#"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
-                                <a href="#"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="#"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
-                             </ul>
-                             <ul class="secundario">
-                                <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
-                             </ul>
-                        
-                </div>
-            <!-- FIN MENUBAR -->
-<!--***********************************************************************************-->
-            <!-- INICIO LISTADO-CARRITO -->
-                <div class="listadoCarrito">
-                    <h2 class="titulo"> Registro de Ventas</h2>
-                        <div class="contenedor-secundario">
-                            <label class="clave">Clave: <input  class="producto" type="text"></label>
-                        </div>
-                        <!--PANEL PRINCIPAL-->
-                        <div class="contenedor">
-                                <!--PANEL IZQUIERDO-->
-                                
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <td class="nameP">PRODUCTO</td>
-                                                <td class="unidadN">PRECIO UNIT</td>
-                                                <td class="unidadN">DESCTO</td>
-                                                <td class="unidadN">CANT</td>
-                                                <td class="unidadN">IMPORTE</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="P">Producto 1</td>
-                                                <td>150</td>
-                                                <td>0.00</td>
-                                                <td>2.00</td>
-                                                <td>500</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.00</td>
-                                                <td>2.00</td>
-                                                <td>500</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-    
-
-            
-                        </div>
-                </div>
-            <!-- FIN LISTADO-CARRITO -->
-<!--***********************************************************************************-->
-            <!-- INICIO INTERACCION-VENTA -->
-                <div class="interracionVenta">
-                                    <!--PANEL DERECHO-->
-                                        <h1 class="txtTitulo">TOTAL</h1>
-                                        <input class="textboxTotal" type="text" value="$500">
-                                        
-                                        <div class="opciones">
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/retiro.png">
-                                                <p>[F1] Retiro</p>
-                                            </button>
-        
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/editar.png">
-                                                <p> [F2] Editar</p>
-                                            </button>
-        
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/buscar.png">
-                                                <p>[F3] Buscar</p>
-                                            </button>
-        
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/cobrar.png">
-                                                <p>[F4] Cobrar</p>
-                                            </button>
-        
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/eliminar.png">
-                                                <p>[F5] Quitar</p>
-                                            </button>
-        
-                                            <button class="btn-opcion">
-                                                <img src="imagenes/cliente.png">
-                                                <p>[F6] Clientes</p>
-                                            </button>
-                                            <img  class="logo" src="imagenes/logo.jpg">    
-                                        </div>            
-                                        
-                            
-                </div>
-            <!-- FIN INTERACCION-VENTA -->
-<!--***********************************************************************************-->
+    <div class="login-box">
+      <img src="" class="avatar" alt="Avatar Image">
+      <h1>Inicio Sesion</h1>
+      <form action="cajero.html">
+        <!-- USERNAME INPUT -->
+        <label for="username">Usuario</label>
+        <input type="text" placeholder="Intrudcir su nombre de usuario">
+        <!-- PASSWORD INPUT -->
+        <label for="password">Password</label>
+        <input type="password" placeholder="Intrudcir su password">
+        <input type="submit" value="Iniciar sesion">
+        <a href="#">Lost your Password?</a><br>
+        <a href="#">Don't have An account?</a>
+      </form>
     </div>
-
-    <div id="root"></div>
-</body>
+  </body>
 </html>
