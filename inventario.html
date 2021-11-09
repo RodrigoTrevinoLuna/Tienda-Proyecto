@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="css/contenido.css">
+    <link rel="stylesheet" href="css/inventario.css">
+</head>
+<body>
+    <div class="container">
+
+        <!--***********************************************************************************-->
+            <!-- INICIO MENUBAR-->
+            <div class="menuBar">
+                        
+                <ul class="principal">
+                   <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
+                   <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
+                   <a href="#"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
+                   <a href="#"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                   <a href="#"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
+                   <a href="#"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
+                   <a href="#"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
+                   <a href="#"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
+                   <a href="#"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                </ul>
+                <ul class="secundario">
+                   <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                </ul>
+           
+   </div>
+<!-- FIN MENUBAR -->
+<!--***********************************************************************************-->
+            <!-- INICIO LISTADO-CARRITO -->
+            
+            <div class="container-inventario">
+                <h2 class="titulo"> Inventario</h2>
+                    
+                <div class="contenido">
+                
+                    <!--PANEL PRINCIPAL-->
+                    <div class="datos">
+                        <button>Imprimir</button>
+                        <button>Nuevo Producto</button>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Clave</td>
+                                    <td>Item</td>
+                                    <td>Unidades</td>
+                                    <td>Proveedor</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>002</td>
+                                    <td>Harina 3kg La Hermana</td>
+                                    <td>2</td>
+                                    <td>Bokados</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="filtro">
+                        <select name="" id="">
+                            <option>menos de 5</option>
+                            <option>menos de 10</option>
+                            <option>menos de 15</option>
+                            <option>menos de 20</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        <!-- FIN LISTADO-CARRITO -->
+
+
+    </div>
+</body>
+</html>

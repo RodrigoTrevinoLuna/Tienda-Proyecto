@@ -28,7 +28,7 @@ body{
 }
     .menuBar{
         background: var(--bg-P);
-        border-radius: 0px 12px 12px 0px;
+        border-radius: 0px 0px 12px 0px;
         width: 4%;
         color: var(--bg-T);
         display: flex;
