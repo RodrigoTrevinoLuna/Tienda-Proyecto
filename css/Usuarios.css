@@ -20,8 +20,7 @@ form{
     justify-content: center;
 
 }
-
-/*Tabla Proveedor*/ 
+/*Tabla Usuarios*/
 .datos{
     display: flex;
     justify-content: center;
@@ -33,71 +32,56 @@ table{
        border-bottom: grey 1px solid;
        background: rgba(128, 128, 128, 0.26);
        box-shadow: 2px 2px #888888;
-       border-radius: 5px;
-       
+       border-radius: 5px;   
    }
    .nameP{
-       width: 30%;
-   }
-   .dat{
-       width: 15.5%;
-       text-align: center;
-   }
-   .cla{
-    width: 5.5%;
+    width: 40%;
+}
+.dat{
+    width: 17.5%;
     text-align: center;
 }
-   thead>tr>td{
-       border-bottom: solid 1px grey;
-       background: #002973;
-       padding: 7px;
-       color: white;
-       border-radius: 5px;
-       
-   }
+.cla{
+ width: 4.5%;
+ text-align: center;
+}
+thead>tr>td{
+    border-bottom: solid 1px grey;
+    background: #002973;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    
+}
+tbody>tr>td{
+    border-right: grey 1px solid;
+    padding: 5px;
+    text-align: center;
+ }
 
-   tbody>tr>td{
-       border-right: grey 1px solid;
-       padding: 5px;
-       text-align: center;
-    }
+tbody>tr:hover{
+    background: grey;
+    color: white;
+}
+.P{
+     border-left: 1px solid grey;
+     text-align: left;
+}
+.edi{
+ width: 20%;
+ padding: 1px 15px ;
+}
 
-   tbody>tr:hover{
-       background: grey;
-       color: white;
-   }
-   .P{
-        border-left: 1px solid grey;
-        text-align: left;
-   }
-   .edi{
-    width: 10%;
-    padding: 1px 15px ;
-   }
-
-/*Registro de proveedor*/ 
-/*.registro{
-    height: 100vh;
-    width: max-content;
-    padding: 0px 20px 0px 20px;
-    border-radius: 10px;
-    font-family: 'calibri';
-    display: flex;
-}*/
+/*Registro Usuarios*/
 .textbox{
     width: 100%;
-    height: 45px;
+    height: 35px;
     display: flex;
     background: transparent;
     outline: none;
     border: 0;
     border-bottom: 1px solid white;
     font-weight:700 ;
-}
-.textbox:focus{
-    margin-top: 5px;
-    padding-left: 17px;
-    width: 95%;   
 }
 button{
     background: #002973;
@@ -106,7 +90,11 @@ button{
     border-radius: 10px;
     margin: 10px;
 }
+.textbox:focus{
+    margin-top: 5px;
+    padding-left: 17px;
+    width: 95%;   
+}
 button:hover{
     cursor: pointer;
 }
-
