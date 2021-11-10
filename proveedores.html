@@ -11,13 +11,12 @@
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="css/Plantilla.css">
         <link rel="stylesheet" href="css/Proveedor.css">
 </head>
 <body>
     <div class="container">
          <!-- INICIO MENUBAR-->
-                        <div class="menuBar">
+                        <div class="menuBar" >
                                         
                             <ul class="principal">
                             <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
@@ -53,7 +52,6 @@
                         <div class="div-titulo">
                             <h2 class="titulo">Proveedores</h2>
                         </div>
-
                         <div class="registro">
                             <form>
                                 <label>Nombre de Proveedor :<input class="textbox" type="text" placeholder="Ingrese Nombre"></label>
@@ -108,9 +106,25 @@
                             </div><!--Cierre de div datos-->
                     </div>
                     <div class="columna-2">
-                                <br>
-                                <h1>Columna 2</h1>
-                                <h3>Tamaño de largo=> width:20%</h3>
+                        
+                            <form>
+                                <section class="container-input">
+                                    <section >
+                                        <label>Nombre de Proveedor:<input class="textbox" type="text" placeholder="Ingrese Nombre"></label>
+                                        <label>Correo Electronico <input class="textbox" type="email" placeholder="Ingrese Correo"></label>
+                                        
+                                    </section>
+                                    <section>
+                                        <label>Telefono<input class="textbox" type="tel" placeholder="Ingrese Telefono"></label>
+                                        <label>Dirección<input class="textbox" type="text" placeholder="Ingrese Direccion"></label>
+                                    </section>
+                                    <section>
+                                        <label>RFC<input class="textbox" type="text" placeholder="Ingrese RFC"></label>
+                                    </section>    
+                                </section>
+                                <button type="submit">Registrar</button>
+                            </form>
+                        
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->
