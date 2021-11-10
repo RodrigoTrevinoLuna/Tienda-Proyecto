@@ -43,36 +43,94 @@
                 
                     <!--PANEL PRINCIPAL-->
                     <div class="datos">
-                        
-                        <button>Imprimir</button>
-                        <button>Nuevo Producto</button>
-
-                        <table>
+                        <section class="input-btn">
+                            <input class="input-buscar" type="text" value="Buscar...">
+                            <section class="btn-group">
+                                <button class="btn-imprimir">Imprimir</button>
+                                <button class="btn-nProducto">Nuevo Producto</button>
+                            </section>
+                        </section>   
+                       <table class="table-inventario">
+                                    <thead>
+                                        <tr>
+                                            <td class="unidadN">CLAVE</td>
+                                            <td class="nameP">ITEM</td>
+                                            <td class="unidadN">UNIDADES</td>
+                                            <td class="nameProveedor">PROVEEDOR</td>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="C">A-1</td>
+                                            <td class="P">Frijol 1kg Doña Lucha</td>
+                                            <td>0.00</td>
+                                            <td>Mercado</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td class="C">A-2</td>
+                                            <td class="P">Huevo 1kg Bachoco</td>
+                                            <td>0.00</td>
+                                            <td>Soriana</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="C">A-3</td>
+                                            <td class="P">Arroz 1kg Bachoco</td>
+                                            <td>6.00</td>
+                                            <td>Soriana</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                    </div> <!--Fin de datos-->
+                    <hr style="height:590px">
+                    <div class="filtro">
+                        <h3 class="titulo-filtro">Pre-pedido</h3>
+                        <section class="section-btn">
+                            <section>
+                                <label  class="label-comboBox">Filtrar: <select class="comboBox" name="" id=""></label>
+                                    <option>menos de 5 unidades</option>
+                                    <option>menos de 10 unidades</option>
+                                    <option>menos de 15 unidades</option>
+                                    <option>menos de 20 unidades</option>
+                                </select>
+                            </section>
+                            <section>
+                                <button class="generar">Generar Pedido</button>
+                            </section>
+                        </section>
+                        <table class="table-filtro">
                             <thead>
                                 <tr>
-                                    <td>Clave</td>
-                                    <td>Item</td>
-                                    <td>Unidades</td>
-                                    <td>Proveedor</td>
+                                    <td></td>
+                                    <td class="unidadN">CLAVE</td>
+                                    <td class="nameP">ITEM</td>
+                                    <td class="unidadN">UNIDADES</td>
+                                    <td class="nameProveedor">PROVEEDOR</td>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>002</td>
-                                    <td>Harina 3kg La Hermana</td>
-                                    <td>2</td>
-                                    <td>Bokados</td>
+                                    <td class="menos"><img src="imagenes/iconos/menos.png"></td>
+                                    <td class="C">A-1</td>
+                                    <td class="P">Frijol 1kg Doña Lucha</td>
+                                    <td>0.00</td>
+                                    <td>Mercado</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="menos"><img src="imagenes/iconos/menos.png"></td>
+                                    <td class="C">A-2</td>
+                                    <td class="P">Huevo 1kg Bachoco</td>
+                                    <td>0.00</td>
+                                    <td>Soriana</td>
+                                    
                                 </tr>
                             </tbody>
                         </table>
-                    </div> <!--Fin de datos-->
-                    <div class="filtro">
-                        <select name="" id="">
-                            <option>menos de 5</option>
-                            <option>menos de 10</option>
-                            <option>menos de 15</option>
-                            <option>menos de 20</option>
-                        </select>
+                        
                     </div><!--Fin de filtro-->
                 </div>
             </div>

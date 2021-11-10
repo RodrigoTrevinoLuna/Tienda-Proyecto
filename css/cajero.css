@@ -2,16 +2,6 @@
 .container{
     display: flex;
 }
-    .menuBar{
-        background: var(--bg-P);
-        
-        width: 4%;
-        color: var(--bg-T);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-shadow: 3px 3px #888888;
-    }
 
 .container-secundario{
     display: flex;
@@ -185,11 +175,12 @@ a:hover p{
     padding-top: 45px;
 }
 .opciones>button{
-    width: 47.5%;
+    width: 50%;
     height: 95px;
-    margin: 3px;
+    
     
 }
+
 
 .opciones>button:hover{
     background: rgba(146, 145, 145, 0.541);
@@ -214,4 +205,5 @@ a:hover p{
     height: 170px;
     margin: 3px;
     border-radius: 10px;
+    padding-top: 15px;
 }
