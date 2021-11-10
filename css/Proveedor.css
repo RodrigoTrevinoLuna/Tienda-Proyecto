@@ -2,6 +2,23 @@
     margin: 0px;
     padding: 0px;
 }
+.columna-1{
+    width: 80%;
+}
+.columna-2{
+    background:#BFBEBD;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 150px 0px 0px 150px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 
 /*Tabla Proveedor*/ 
 .encabezado{
@@ -66,20 +83,14 @@ table{
 
 /*Registro de proveedor*/ 
 .registro{
-    background: #BFBEBD;
-    width: 700px;
-    margin:auto;
-    padding: 30px 20px 30px 20px;
-    position: relative;
-    top: 20px;
+    height: 100vh;
+    width: max-content;
+    padding: 0px 20px 0px 20px;
     border-radius: 10px;
     font-family: 'calibri';
     display: flex;
 }
-form{
-    display: flex;
-    flex-direction: column;
-}
+
 label{
     padding: 7px;
     font-weight: 400;
@@ -120,3 +131,4 @@ button{
 button:hover{
     cursor: pointer;
 }
+
