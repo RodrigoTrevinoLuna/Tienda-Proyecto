@@ -20,7 +20,11 @@
 
 
 /* Parte de DATOS */
-.producto{
+.input-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.input-buscar{
     box-shadow: 2px 2px #888888;
     border-radius: 15px;
     height: 20px;
@@ -30,6 +34,23 @@
     
     outline-color: grey;
     border: 1.5px var(--bg-P) solid;
+}
+.btn-group{
+    
+    right: 0px;
+}
+.btn-imprimir, .btn-nProducto{
+    background: rgba(128, 128, 128, 0.26);
+    box-shadow: 2px 2px grey;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0px 15px 0px 15px;
+    cursor: pointer;
+    border: none;
+    height: 32px;
+    width: max-content;
+}
+.btn-imprimir:active, .btn-nProducto:active{
+    background: white;
 }
 
 
@@ -72,9 +93,12 @@ tbody>tr:hover{
    color: white;
 }
 .P{
-    border-left: 1px solid grey;
+    
     text-align: left;
 
+}
+.C{
+    border-left: 1px solid grey;
 }
 
 .contenedor-clave{
@@ -89,6 +113,11 @@ tbody>tr:hover{
 
 .titulo-filtro{
     text-align: center;
+}
+.section-btn{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
 }
 
 .label-comboBox{
@@ -110,13 +139,11 @@ tbody>tr:hover{
         background: rgba(128, 128, 128, 0.26);
         box-shadow: 2px 2px grey;
         border-radius: 5px 5px 5px 5px;
-        padding: 5px;
+        padding: 0px 15px 0px 15px;
         cursor: pointer;
         border: none;
         height: 32px;
-        width: 90px;
-        position: relative;
-        right: -285px;
+        width: max-content;
 }
 
 .generar:active{
