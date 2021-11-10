@@ -43,36 +43,81 @@
                 
                     <!--PANEL PRINCIPAL-->
                     <div class="datos">
-                        
+
+                        <input type="text" value="Buscar...">
                         <button>Imprimir</button>
                         <button>Nuevo Producto</button>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Clave</td>
-                                    <td>Item</td>
-                                    <td>Unidades</td>
-                                    <td>Proveedor</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>002</td>
-                                    <td>Harina 3kg La Hermana</td>
-                                    <td>2</td>
-                                    <td>Bokados</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <button class="btn-pedido">Realizar Pedido</button>
+                        
+                       <table class="table-inventario">
+                                    <thead>
+                                        <tr>
+                                            <td class="unidadN">CLAVE</td>
+                                            <td class="nameP">ITEM</td>
+                                            <td class="unidadN">UNIDADES</td>
+                                            <td class="nameProveedor">PROVEEDOR</td>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="P">Producto 1</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>2.00</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>2.00</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
                     </div> <!--Fin de datos-->
+                    <hr style="height:590px">
                     <div class="filtro">
-                        <select name="" id="">
+                        <h3 class="titulo-filtro">Pre-pedido</h3>
+                        <label  class="label-comboBox">Filtrar: <select class="comboBox" name="" id=""></label>
                             <option>menos de 5</option>
                             <option>menos de 10</option>
                             <option>menos de 15</option>
                             <option>menos de 20</option>
                         </select>
+                        <button class="generar">Generar</button>
+                        <table class="table-filtro">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td class="unidadN">CLAVE</td>
+                                    <td class="nameP">ITEM</td>
+                                    <td class="unidadN">UNIDADES</td>
+                                    <td class="nameProveedor">PROVEEDOR</td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="menos"><img src="imagenes/iconos/menos.png"></td>
+                                    <td class="P">Producto 1</td>
+                                    <td>150</td>
+                                    <td>0.00</td>
+                                    <td>2.00</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="menos"><img src="imagenes/iconos/menos.png"></td>
+                                    <td class="P">Producto 2</td>
+                                    <td>150</td>
+                                    <td>0.00</td>
+                                    <td>2.00</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                        
                     </div><!--Fin de filtro-->
                 </div>
             </div>
