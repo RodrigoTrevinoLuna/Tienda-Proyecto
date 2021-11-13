@@ -13,10 +13,11 @@
     flex-direction: column;
 } 
 .tabla{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 65%;
-    border-radius: 25px;
+    
+    
 }
 
 .listado-venta>.tabla>table{
@@ -24,7 +25,7 @@
     height: 100%;
     
     box-shadow: 2px 2px #888888;
-    border-radius:5px ;
+    
     
     
     
@@ -137,7 +138,7 @@ a:hover p{
    }
    thead>tr>td{
        background: var(--bg-P);
-       padding: 7px;
+       padding: 8px;
        color: white;
        border-right: 1px solid grey;
    }
@@ -252,4 +253,7 @@ a:hover p{
     border-radius: 10px;
     padding-top: 15px;
     text-align: center;
+}
+::-webkit-scrollbar {
+    display: none;
 }
