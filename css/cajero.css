@@ -255,3 +255,14 @@ a:hover p{
 ::-webkit-scrollbar {
     display: none;
 }
+
+/*scrollbar-table*/
+
+.my-custom-scrollbar {
+    position: sticky;
+    overflow: auto;
+    }
+    thead tr td{ 
+        position: sticky;
+        top: 0;
+    }
