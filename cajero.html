@@ -37,36 +37,140 @@
                             <div class="div-titulo">
                                 <h2 class="titulo"> Registro de Ventas</h2>
                             </div>
-                        
-                            <div class="tabla">
-                                <div class="contenedor-clave"><label class="clave">Clave: <input  class="producto" type="text"></label></div>
-                                <table>
+                            <div class="contenedor-clave"><label class="clave">Clave: <input  class="producto" type="text"></label></div>
+                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                                
+                                <table >
                                     <thead>
                                         <tr>
                                             <td class="nameP">PRODUCTO</td>
                                             <td class="unidadN">PRECIO UNIT</td>
                                             <td class="unidadN">DESCTO</td>
                                             <td class="unidadN">CANT</td>
-                                            <td class="unidadN">IMPORTE</td>
+                                            <td class="unidadT">IMPORTE</td>
+                                            
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="fila">
                                             <td class="P">Producto 1</td>
                                             <td>150</td>
-                                            <td>0.00</td>
+                                            <td>0.10</td>
+                                            <td>5.00</td>
                                             <td>2.00</td>
-                                            <td>500</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="fila">
                                             <td class="P">Producto 2</td>
                                             <td>150</td>
                                             <td>0.00</td>
+                                            <td>3.00</td>
                                             <td>2.00</td>
-                                            <td>500</td>
                                         </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.20</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr><tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr><tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr><tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td class="P">Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>2.00</td>
+                                        </tr>
+                                   
+                                        <!--No borrar-->
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
                                     </tbody>
                                 </table>
+                        </div>
+                        <div class="resultados">
+                            <section><label>Subtotal</label><input type="text" readonly></section>
+                            <section><label>Iva 16%</label><input type="text" readonly></section>
                         </div>
                     </div>
                     <div class="interaccion-venta">
@@ -75,13 +179,14 @@
     
     <div class="opciones">
         <button class="btn-opcion">
-            <img src="imagenes/retiro.png">
-            <p>[F1] Retiro</p>
+            <img src="imagenes/cobrar.png">
+            <p>[F4] Cobrar</p>
         </button>
 
         <button class="btn-opcion">
-            <img src="imagenes/editar.png">
-            <p> [F2] Editar</p>
+            <img src="imagenes/retiro.png">
+            <p>[F1] Retiro</p>
+            
         </button>
 
         <button class="btn-opcion">
@@ -90,18 +195,18 @@
         </button>
 
         <button class="btn-opcion">
-            <img src="imagenes/cobrar.png">
-            <p>[F4] Cobrar</p>
+            <img src="imagenes/editar.png">
+            <p> [F2] Editar</p>
         </button>
 
         <button class="btn-opcion">
             <img src="imagenes/eliminar.png">
-            <p>[F5] Quitar</p>
+            <p>[F5] Eliminar Producto</p>
         </button>
 
         <button class="btn-opcion">
-            <img src="imagenes/cliente.png">
-            <p>[F6] Clientes</p>
+            <img src="imagenes/cancelar-venta.png">
+            <p>[F6] Cancelar Venta</p>
         </button>
        <!-- <img  class="logo" src="imagenes/logo.jpg">  -->
     </div>            
