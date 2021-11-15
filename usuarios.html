@@ -11,7 +11,7 @@
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="css/Plantilla.css">
+        <link rel="stylesheet" href="css/Usuarios.css">
     
 </head>
 <body>
@@ -21,6 +21,7 @@
                                         
                             <ul class="principal">
                                 <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                                <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                                 <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                                 <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                                 <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
@@ -53,17 +54,79 @@
                         <div class="div-titulo">
                             <h2 class="titulo"> Usuarios</h2>
                         </div>
+                        <form>
+                            <section class="container-input">
+                                <section >
+                                    <label>Nombre<input class="textbox" type="text" placeholder="Ingrese su Nombre"></label>
+                                    <label>Correo Electronico<input class="textbox" type="email" placeholder="Ingrese su Correo"></label>
+                                    <label>Nombre Usuario:<input class="textbox" type="text" placeholder="Ingrese su Nombre"></label>
+                                </section>
+
+                                <section>
+                                   <label>Contraseña<input class="textbox" type="password" placeholder="Ingrese su Contraseña"></label>
+                                   <label>Confirmar Contraseña<input class="textbox" type="password" placeholder="Confirme su Contraseña"></label>
+                                </section>
+
+                                <section>
+                                    <label>Fecha de Nacimiento<input class="textbox" type="date" placeholder="Ingrese su Edad"></label>
+                                    <label>Telefono<input class="textbox" type="tel" placeholder="Ingrese su Telefono"></label>
+                                </section>
+
+                                <section>
+                                    <label>Dirección<input class="textbox" type="text" placeholder="Ingrese su Direccion"></label>
+                                    <label>RFC<input class="textbox" type="text" placeholder="Ingrese RFC"></label>
+                                </section> 
+                                
+                                <section class="sex">
+                                    <label>Hombre<input class="rad" type="radio" name="sex"></label>
+                                    <label>Mujer<input class="rad" type="radio" name="sex"></label>
+                                </section>  
+                            </section>
+                            <button type="submit">Registrar</button>
+                        </form>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                <br>
-                                <h1>Columna 1</h1>
-                                <h3>Tamaño de largo=> width:80%</h3>
-                            </div><!--Cierre de div datos-->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td class="cla">Clave</td>
+                                        <td class="nameP">Nombre Completo</td>
+                                        <td class="dat">Correo Electronico</td>
+                                        <td class="dat">Nombre Usuario</td>
+                                        <td class="dat">Fecha de Nacimiento</td>
+                                        <td class="dat">Telefono</td>
+                                        <td class="dat">Direccion</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="P"></td>
+                                        <td>Ivan Akejandro Narvaez Govea</td>
+                                        <td>narvaezivan411@gmail.com</td>
+                                        <td>Ivan Narvaez</td>
+                                        <td>16-Marzo</td>
+                                        <td>81262688196</td>
+                                        <td class="accion">
+                                            <a href="#">Editar</a><a href="#">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="P"></td>
+                                        <td>Ivan Akejandro Narvaez Govea</td>
+                                        <td>ivan@gmail.com</td>
+                                        <td>Ivan Narvaez</td>
+                                        <td>16-Marzo</td>
+                                        <td>81262688196</td>
+                                        <td class="accion">
+                                            <a href="#">Editar</a><a href="#">Eliminar</a>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!--Cierre de div datos-->
                     </div>
                     <div class="columna-2">
-                                <br>
-                                <h1>Columna 2</h1>
-                                <h3>Tamaño de largo=> width:20%</h3>
+                       
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->

@@ -6,14 +6,11 @@
 
 .contenido{
     display: flex;
+    justify-content: center;
 }
 .datos{
-    width: 55%;
+    width: 90%;
     padding: 40px 15px 15px 15px;
-}
-.filtro{
-    width: 44%;
-    padding: 0px 15px 15px 15px;
 }
 
 /******************/
@@ -88,10 +85,11 @@ tbody>tr>td{
    text-align: center;
 }
 
-tbody>tr:hover{
-   background: grey;
-   color: white;
+tbody>.fila:hover{
+    background: rgba(128, 128, 128, 0.37);
+    color: white;
 }
+
 .P{
     
     text-align: left;
