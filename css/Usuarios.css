@@ -6,9 +6,7 @@
     width: 100%;
 
 }
-form{
-    width: 80%;
-}
+
 /*Tabla Usuarios*/
 .datos{
     display: flex;
@@ -79,19 +77,19 @@ button{
 button:hover{
     cursor: pointer;
 }
-.form-registro{
+.form{
     display: flex;
-    Padding: 40px;
-    flex-direction: column;
+    background: black;
 }
 .seccion1{
-    display: flex;
-    flex-direction: column;
+    padding: 10px;
+    width: min-content;
 }
 .seccion2{
-    display: flex;
-    flex-direction: column;
+    padding: 10px;
+    width: min-content;
 }
-label{
-    padding: 1px;
+.seccion3{
+    padding: 10px;
+    width: min-content;
 }
