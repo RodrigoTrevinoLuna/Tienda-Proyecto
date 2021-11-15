@@ -17,10 +17,11 @@
     --bg-Q:#b9ffff;
 
 }
+/*
 body{
     background:#d3cece46;;
 }
-
+*/
 /*Posicion de los componentes*/
 .container{
     display: flex;

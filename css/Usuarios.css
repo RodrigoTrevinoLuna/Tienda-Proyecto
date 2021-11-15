@@ -63,9 +63,6 @@ tbody>tr:hover{
     padding-right: 5px;
 }
 /*Registro Usuarios*/
-.textbox{
-    padding: 1px;
-}
 button{
     width: 10%;
     background: #002973;
@@ -79,8 +76,9 @@ button:hover{
 }
 .form{
     display: flex;
-    justify-content: center;
+    justify-content: ;
     background: #C6C5C5;
+    padding: 10px;
 }
 .seccion1{
     padding: 10px;
@@ -93,4 +91,9 @@ button:hover{
 .seccion3{
     padding: 10px;
     width: min-content;
+}
+form{
+    padding-top: 30px;
+    padding-left: 100px;
+    padding-right: 500px;
 }

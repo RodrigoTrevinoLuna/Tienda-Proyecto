@@ -81,8 +81,10 @@ button:hover{
 
 .form{
     display: flex;
-    justify-content: center;
-    background: #C6C5C5;
+    justify-content: ;
+    background: white;
+    padding: 10px;
+    box-shadow: 5px black;
 }
 .seccion1{
     padding: 10px;
@@ -92,8 +94,14 @@ button:hover{
     padding: 10px;
     width: min-content;
 }
-.boton{
-    justify-content: center;
+.seccion3{
+    padding: 10px;
+    width: min-content;
+}
+form{
+    padding-top: 30px;
+    padding-left: 100px;
+    padding-right: 500px;
 }
 
 
