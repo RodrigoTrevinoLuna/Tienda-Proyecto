@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/producto.css">
+    
 </head>
 <body>
     <div class="container">
@@ -17,6 +18,7 @@
                         
                 <ul class="principal">
                     <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                    <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                     <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                     <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                     <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
@@ -36,55 +38,275 @@
 <!--************************************* **********************************************-->
             <!-- INICIO LISTADO-CARRITO -->
             <div class="container-producto">
-                <h2 class="titulo"> Productos a Comprar</h2>
-
-                <button class="btn-imprimir">Imprimir</button>
+                
+                
                     <!--PANEL PRINCIPAL-->
                     <div class="contenedor">
+                        <h2 class="titulo"> Productos</h2>
+                        <div class="a">
+                            <div>
+                                <button class="btn-imprimir">Imprimir</button>
+                            </div>
+                        </div>
                             <!--PANEL IZQUIERDO-->
-                            
-                                <table>
+                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                                
+                                <table >
                                     <thead>
-                                        <tr>
-                                            <td></td>
-                                            <td class="unidad">CLAVE</td>
-                                            <td class="item">ITEM</td>
-                                            <td class="unidadN">UDS. POR PEDIR</td>
-                                         
-                                            <td class="unidadN">Proveedor</td>
+                                        <tr class="item">
+                                            <th class="unidadN">CLAVE</th>
+                                            <th class="name">ITEM</th>
+                                            <th class="name">PROVEEDOR</th>
+                                            <th class="unidadN">CANT</th>
+                                            <th class="unidadN">ACCIÓN</th>
+                                            
+                                            
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="menos"><img src="imagenes/iconos/menos.png"></td>
-                                            <td class="item-1">3320</td>
-                                            <td class="name-item">Harina 1kg Los Lucas</td>
-                                            <td><input type="number"></td>
-                                            <td><select name="" id="">
-                                                <option>Empresa1</option>
-                                                <option>Empresa2</option>
-                                                <option>Empresa3</option>
-                                            </select></td>
+                                        <tr class="fila">
+                                            <td>Producto 1</td>
+                                            <td>150</td>
+                                            <td>0.10</td>
+                                            <td>5.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                         </tr>
-                                        <tr>
-                                            <td class="menos"><img src="imagenes/iconos/menos.png"></td>
-                                            <td class="item-1">3321</td>
-                                            <td class="name-item">Arroz 1kg Doña Maria</td>
-                                            <td><input type="number"></td>
-                                            <td><select name="" id="">
-                                                <option>Empresa1</option>
-                                                <option>Empresa2</option>
-                                                <option>Empresa3</option>
-                                            </select></td>
+                                        <tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                         </tr>
+                                        <tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.20</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr><tr class="fila">
+                                            <td>Producto 2</td>
+                                            <td>150</td>
+                                            <td>0.30</td>
+                                            <td>3.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                   
+                                        <!--No borrar-->
+                                        <tr><td></td><td></td><td></td><td></td></tr>
                                     </tbody>
                                 </table>
-
-
-        
+                        </div>
                     </div>
+                      <!--Panel derecho -->
+                      <div class="form">
+                          <section class="titulo-form">
+                            <h2>Nuevo Producto</h2>
+                          <img  src="imagenes/nuevo-producto.png">
+                        </section>
+                        
+                        <form action="">
+                            <section>
+                                <label>Nombre del ITEM</label>
+                                <input type="text">
+                            </section>
+                            <section>
+                                <label>Proveedor</label>
+                                <select>
+                                    <option>Proveedor1</option>
+                                    <option>Proveedor1</option>
+                                    <option>Proveedor1</option>
+                                </select>
+                                
+                            </section>
+                            <section class="btn-newP">
+                                <div>
+                                    <button class="btn-guardar" type="submit">Guardar</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                            
             </div>
-        <!-- FIN LISTADO-CARRITO -->
+        
 
 
     </div>

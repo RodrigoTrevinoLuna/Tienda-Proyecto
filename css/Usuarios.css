@@ -61,9 +61,15 @@ tbody>tr:hover{
 }
 .edi{
  width: 20%;
- padding: 1px 15px ;
+ 
 }
-
+.accion{
+    display: flex;
+    padding: 5px;
+}
+.accion>a:first-child{
+    padding-right: 5px;
+}
 /*Registro Usuarios*/
 .textbox{
     
