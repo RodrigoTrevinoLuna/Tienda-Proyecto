@@ -53,6 +53,29 @@
                         <div class="div-titulo">
                             <h2 class="titulo">Proveedores</h2>
                         </div>
+
+                        <form>
+                            <div class="form">
+                                    <div class="seccion1">
+                                        
+                                        <div><label>Nombre de Proveedor:<input class="textbox" type="text" placeholder="Ingrese Nombre"></label></div>
+                                        <div><label>Correo Electronico <input class="textbox" type="email" placeholder="Ingrese Correo"></label></div>
+                                        <div><label>Telefono<input class="textbox" type="tel" placeholder="Ingrese Telefono"></label></div>
+                                    </div>
+
+                                    <div class="seccion2" >
+                                            
+                                        <div><label>Dirección<input class="textbox" type="text" placeholder="Ingrese Direccion"></label></div>
+                                        <div> <label>RFC<input class="textbox" type="text" placeholder="Ingrese RFC"></label></div>
+                                        
+                                    </div>
+                                   
+                            </div>
+                            <div class="boton">
+                                 <button type="submit">Registrar</button>
+                            </div>
+                        </form>
+
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
                                 <table>
@@ -73,10 +96,9 @@
                                             <td>81293912</td>
                                             <td>ivan@gmail.com</td>
                                             <td>1231QDQD</td>
-                                            <td>
-                                               <input class="edi" type="image" src="imagenes/iconos/editar.png">
-                                               <input class="edi" type="image" src="imagenes/iconos/cancelar.png">
-                                            </td>
+                                            <td class="accion">
+                                                <a href="#">Editar</a><a href="#">Eliminar</a>
+                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="P"></td>
@@ -84,9 +106,8 @@
                                             <td>8123712</td>
                                             <td>ivan@gmail.com</td>
                                             <td>128huaas</td>
-                                            <td>
-                                                <input class="edi" type="image" src="imagenes/iconos/editar.png">
-                                                <input class="edi" type="image" src="imagenes/iconos/cancelar.png">
+                                            <td class="accion">
+                                                <a href="#">Editar</a><a href="#">Eliminar</a>
                                              </td>
                                         </tr>
                                     </tbody>
@@ -94,28 +115,6 @@
 
                             </div><!--Cierre de div datos-->
                     </div>
-                    <div class="columna-2">
-                        
-                            <form>
-                                <section class="container-input">
-                                    <section >
-                                        <label>Nombre de Proveedor:<input class="textbox" type="text" placeholder="Ingrese Nombre"></label>
-                                        <label>Correo Electronico <input class="textbox" type="email" placeholder="Ingrese Correo"></label>
-                                        
-                                    </section>
-                                    <section>
-                                        <label>Telefono<input class="textbox" type="tel" placeholder="Ingrese Telefono"></label>
-                                        <label>Dirección<input class="textbox" type="text" placeholder="Ingrese Direccion"></label>
-                                    </section>
-                                    <section>
-                                        <label>RFC<input class="textbox" type="text" placeholder="Ingrese RFC"></label>
-                                    </section>    
-                                </section>
-                                <button type="submit">Registrar</button>
-                            </form>
-                        
-                    </div>
-                    
                     <!--Aqui agregar si queires mas columnaas-->
                 </div>
 
