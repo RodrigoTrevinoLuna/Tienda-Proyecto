@@ -6,9 +6,6 @@
     width: 100%;
 
 }
-.columna-2{
-      
-}
 form{
     width: 80%;
 }
@@ -59,10 +56,7 @@ tbody>tr:hover{
      border-left: 1px solid grey;
      text-align: left;
 }
-.edi{
- width: 20%;
- 
-}
+
 .accion{
     display: flex;
     padding: 5px;
@@ -72,7 +66,7 @@ tbody>tr:hover{
 }
 /*Registro Usuarios*/
 .textbox{
-    
+    padding: 1px;
 }
 button{
     width: 10%;
@@ -84,4 +78,20 @@ button{
 }
 button:hover{
     cursor: pointer;
+}
+.form-registro{
+    display: flex;
+    Padding: 40px;
+    flex-direction: column;
+}
+.seccion1{
+    display: flex;
+    flex-direction: column;
+}
+.seccion2{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    padding: 1px;
 }
