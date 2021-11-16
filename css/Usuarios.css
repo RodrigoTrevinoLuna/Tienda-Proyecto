@@ -3,23 +3,10 @@
     padding: 0px;
 }
 .columna-1{
-    width: 80%;
-}
-.columna-2{
-    background:#BFBEBD;
-    width: 20%;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 30px 0px 0px 30px;
-    font-family: 'calibri';
-    
-}
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
 
 }
+
 /*Tabla Usuarios*/
 .datos{
     display: flex;
@@ -67,10 +54,7 @@ tbody>tr:hover{
      border-left: 1px solid grey;
      text-align: left;
 }
-.edi{
- width: 20%;
- 
-}
+
 .accion{
     display: flex;
     padding: 5px;
@@ -79,28 +63,37 @@ tbody>tr:hover{
     padding-right: 5px;
 }
 /*Registro Usuarios*/
-.textbox{
-    width: 100%;
-    height: 35px;
-    display: flex;
-    background: transparent;
-    outline: none;
-    border: 0;
-    border-bottom: 1px solid white;
-    font-weight:700 ;
-}
 button{
+    width: 10%;
     background: #002973;
     color: white;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 5px;
     margin: 10px;
-}
-.textbox:focus{
-    margin-top: 5px;
-    padding-left: 17px;
-    width: 95%;   
 }
 button:hover{
     cursor: pointer;
+}
+.form{
+    display: flex;
+    justify-content: ;
+    background: #C6C5C5;
+    padding: 10px;
+}
+.seccion1{
+    padding: 10px;
+    width: min-content;
+}
+.seccion2{
+    padding: 10px;
+    width: min-content;
+}
+.seccion3{
+    padding: 10px;
+    width: min-content;
+}
+form{
+    padding-top: 30px;
+    padding-left: 100px;
+    padding-right: 500px;
 }
