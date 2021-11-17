@@ -59,7 +59,8 @@ body{
         flex-direction: column;
         justify-content: space-evenly;
         height: 60vh;
-        padding-top:10px;
+        padding-top:50px;
+
     }
     .principal>a>img, .secundario>a>img{
         width: 20px;
@@ -78,6 +79,10 @@ body{
         background: #888888;
         border: black 1px solid;
         
+    }
+    .principal>hr{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
     .secundario{
