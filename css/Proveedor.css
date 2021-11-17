@@ -84,6 +84,7 @@ button:hover{
     background: white;
     padding: 10px;
     box-shadow: 5px black;
+    box-shadow: 10px 5px 5px black;
 }
 .seccion1{
     padding: 10px;

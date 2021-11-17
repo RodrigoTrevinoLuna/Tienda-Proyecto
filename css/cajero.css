@@ -40,68 +40,7 @@
     color: white;
 }   
 
-/*Estilos MENUBAR*/
 
-    .principal{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 60vh;
-        padding-top:20px ;
-    }
-    .principal>a>img, .secundario>a>img{
-        width: 20px;
-        padding: 7px;
-        background: whitesmoke;
-        border-radius: 5px;
-        border: #888888 1px solid;
-
-    }
-    .principal>a, .secundario>a{
-        width: 5px;
-        padding-left: 7px;
-        
-    }
-    .principal>a>img:hover, .secundario>a>img:hover{
-        background: #888888;
-        border: black 1px solid;
-        
-    }
-    
-    .secundario{
-        padding-bottom: 7px;
-    }
-
-a{
-    display: flex;
-}
-
-a p{
-    display: none;
-    position: absolute;
-    left: 50px;
-}
-a:hover p{
-    display: block;
-    z-index: 1;
-
-    background: #888888;
-    color: white;
-    padding: 10px;
-    border-radius: 15px;
-    border:1px solid white;
-}
-                /*Cambiar color a blanco: filtro botones*/
-                .principal a>img:hover {
-                    filter: invert(100%);
-                    
-                }
-                .secundario a{
-                    width: 100vh;
-                }
-                .secundario a>img:hover{
-                    filter: invert(100%);
-                }
 
 /* Estilos Carrito*/
 
