@@ -4,7 +4,6 @@
 }
 .columna-1{
     width: 100%;
-
 }
 
 /*Tabla Usuarios*/
@@ -18,40 +17,42 @@ table{
     width: 90%; 
        border-bottom: grey 1px solid;
        background: rgba(128, 128, 128, 0.26);
-       box-shadow: 2px 2px #888888;
-       border-radius: 5px;   
+       box-shadow: 2px 2px #888888; 
+       border-collapse:collapse ;
+       height: 100%;
    }
    .nameP{
-    width: 40%;
+    width: 30%;
 }
 .dat{
-    width: 17.5%;
+    width: 19%;
     text-align: center;
 }
 .cla{
  width: 4.5%;
  text-align: center;
 }
-thead>tr>td{
-    border-bottom: solid 1px grey;
+
+thead>tr>th{
+    text-align: center;
+    border-right: solid 1px grey;
     background: #002973;
     padding: 7px;
     color: white;
-    border-radius: 5px;
     
 }
 tbody>tr>td{
-    border-right: grey 1px solid;
+    border-right: solid 1px grey;
     padding: 5px;
     text-align: center;
  }
 
 tbody>tr:hover{
-    background: grey;
+    background:  rgba(128, 128, 128, 0.37);
     color: white;
 }
 .P{
-     border-left: 1px solid grey;
+     height: 20px;
      text-align: left;
 }
 
@@ -61,6 +62,12 @@ tbody>tr:hover{
 }
 .accion>a:first-child{
     padding-right: 5px;
+}
+.a{
+    display: flex;
+    justify-content: end;
+    padding-right: 15px;
+    padding-bottom: 10px;
 }
 /*Registro Usuarios*/
 button{
@@ -97,3 +104,14 @@ form{
     padding-left: 100px;
     padding-right: 500px;
 }
+/*scrollbar-table*/
+
+.my-custom-scrollbar {
+    position: sticky;
+    
+    overflow: auto;
+    }
+    thead tr th{ 
+        position: sticky;
+        top: 0;
+    }
