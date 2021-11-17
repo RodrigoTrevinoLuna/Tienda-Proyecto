@@ -46,13 +46,21 @@ table{
    width: 10%;
    text-align: center;
 }
+.unidadI{
+    width: 25%;
+    text-align: center;
+}
 .unidadN{
    width: 12.5%;
    text-align: center;
 }
-.unidadI{
-    width: 25%;
-    text-align: center;
+
+.fila>td:last-child{
+    display: flex;
+    justify-content: center;
+}
+.fila>td>a{
+    padding-right: 7px;
 }
 thead>tr>td{
    background: var(--bg-P);
@@ -67,6 +75,10 @@ tbody>tr>td{
    text-align: center; 
    
 }
+.accion{
+    border: none;
+}
+
 .tabla{
     padding-left: 20px;
     padding-right: 20px;
@@ -100,17 +112,6 @@ tbody>.fila:hover{
 height: 20px;
 width: 100%;
 }
-.fila>td:last-child{
-    display: flex;
-    justify-content: center;
-}
-.fila>td>a{
-    padding-right: 7px;
-}
-.accion{
-    border: none;
-}
-
 
 /* Realzar Pedidos*/
 form{
@@ -198,3 +199,22 @@ form>p{
     .tabla{
         height: 75vh;
     }
+
+    .filtro{
+        display: flex;
+        width: 100%;
+        justify-content: end;
+    
+        
+    }
+
+    .filtro>div{
+        padding-right: 10px;
+        padding-bottom: 20px;
+    }
+    .filtro>div:last-child{
+        padding-right: 20px;
+    }
+.filtro>div:first-child{
+    padding-right: 15px;
+}

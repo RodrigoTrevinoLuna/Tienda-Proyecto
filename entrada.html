@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Entradas</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
 
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="css/Plantilla.css">
+        <link rel="stylesheet" href="css/entrada.css">
     
 </head>
 <body>
@@ -64,14 +64,98 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                               
+                               <div class="filtro">
+                                   <div><label>Fecha:</label><input type="date"></div>
+                                   <div><label>Buscar:</label><input type="text"></div>
+                               </div>
+                               <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                                
+                                <table >
+                                    <thead>
+                                        <tr>
+                                            <td class="nameP">CLAVE</td>
+                                            <td class="unidadI">ITEM</td>
+                                            <td class="unidadI">PROVEEDOR</td>
+                                            <td class="unidadN">IMPORTE</td>
+                                            <td class="unidadN">UNIDADES PEDIDAS</td>
+                                            <td class="unidadN">ACCIÓN</td>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="fila">
+                                            <td>A-1</td>
+                                            <td class="P">Producto 1</td>
+                                            <td class="P">Tienda-1</td>
+                                            <td>1000</td>
+                                            <td>5.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>A-1</td>
+                                            <td class="P">Producto 1</td>
+                                            <td class="P">Tienda-1</td>
+                                            <td>9000</td>
+                                            <td>5.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                       
+                                     
+                                       
+                                        <!--No borrar-->
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                    </tbody>
+                                </table>
+                        </div>
                         </div><!--Cierre de div datos-->
                         
                     </div>
                     <div class="columna-2">
-                                <br>
-                                <h1>Columna 2</h1>
-                                <h3>Tamaño de largo=> width:20%</h3>
+                        <br><br><br><br>
+                        <h1 class="titulo-pedidos">Nueva Entrada</h1>
+                        <br>
+                        <form action="">
+                            <div>
+                                <label>Item</label><section>:</section>
+                                <select>
+                                    
+                                        <option>Producto1</option>
+                                    
+                                        <option>Producto2s</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="division-txt">
+                                <hr>
+                                <p class="txt-infor">Información del Producto</p>
+                                <hr>
+                            </div>
+                            <div>
+                                <label>Clave</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
+                            </div>
+                            <div>
+                                <label>Importe</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
+                            </div>
+                            <div>
+                                <label>Proveedor</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
+                            </div>
+                            <div>
+                                <label>Unidades</label><section>:</section>
+                                <input type="number">
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="btn">
+                            
+                                <button>Guardar Registro</button>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->

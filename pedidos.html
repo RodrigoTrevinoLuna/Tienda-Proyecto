@@ -65,67 +65,34 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                <br>
+                                
                                 <h1 class="titulo-pedidos">Lista de Pedidos</h1>
                                 <br>
                                 <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
                                 
-                                    <table >
+                                    <table  >
                                         <thead>
                                             <tr>
                                                 <td class="nameP">CLAVE</td>
-                                                <td class="unidadN">ITEM</td>
-                                                <td class="unidadN">PROVEEDOR</td>
+                                                <td class="unidadI">ITEM</td>
+                                                <td class="unidadI">PROVEEDOR</td>
                                                 <td class="unidadN">UNIDADES A PEDIR</td>
-                                                <td class="unidadT">ACCIÓN</td>
+                                                <td class="unidadN">ACCIÓN</td>
                                                 
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="fila">
-                                                <td class="P">Producto 1</td>
-                                                <td>150</td>
-                                                <td>0.10</td>
+                                                <td >Producto 1</td>
+                                                <td class="P">150</td>
+                                                <td class="P">0.10</td>
                                                 <td>5.00</td>
-                                                <td>675.00</td>
+                                                <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                             </tr>
-                                            <tr class="fila">
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.00</td>
-                                                <td>3.00</td>
-                                                <td>450.00</td>
-                                            </tr>
-                                            <tr class="fila">
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.20</td>
-                                                <td>3.00</td>
-                                                <td>360.00</td>
-                                            </tr><tr class="fila">
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.30</td>
-                                                <td>3.00</td>
-                                                <td>315.00</td>
-                                            </tr>
-                                            <tr class="fila">
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.30</td>
-                                                <td>3.00</td>
-                                                <td>315.00</td>
-                                            </tr><tr class="fila">
-                                                <td class="P">Producto 2</td>
-                                                <td>150</td>
-                                                <td>0.30</td>
-                                                <td>3.00</td>
-                                                <td>315.00</td>
-                                            </tr>
-                                       
+                                            
                                             <!--No borrar-->
-                                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -154,15 +121,15 @@
                                     </div>
                                     <div>
                                         <label>Clave</label><section>:</section>
-                                        <input type="text" readonly >
+                                        <input type="text" class="readOnly" readonly >
                                     </div>
                                     <div>
                                         <label>Stock</label><section>:</section>
-                                        <input type="text" readonly >
+                                        <input type="text" class="readOnly" readonly >
                                     </div>
                                     <div>
                                         <label>Proveedor</label><section>:</section>
-                                        <input type="text" readonly >
+                                        <input type="text" class="readOnly" readonly >
                                     </div>
                                     <div>
                                         <label>Pedir</label><section>:</section>
@@ -171,8 +138,8 @@
                                     <hr>
                                     <div>
                                         <div class="btn">
-                                    <button>Cerrar</button>
-                                    <button>Guardar Pedido</button>
+                                    
+                                        <button>Guardar Pedido</button>
                                         </div>
                                     </div>
                                 </form>
