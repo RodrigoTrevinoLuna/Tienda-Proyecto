@@ -1,0 +1,107 @@
+.columna-1{
+    width: 75%;
+    
+}
+
+.columna-2{
+    width: 25%;
+    padding: 15px;
+    background: rgba(128, 128, 128, 0.26);
+}
+.datos{
+    padding: 15px 20px 0px 20px;
+}
+
+table{
+    display: table;
+    width: 100%; 
+    border-collapse: collapse ;
+    border-bottom: grey 1px solid;
+    /*height: 550px;*/
+    box-shadow: 2px 2px #888888;
+    background: rgba(128, 128, 128, 0.26);
+}
+.nameP{
+    width: 10%;
+    text-align: center;
+ }
+ .unidadI{
+     width: 25%;
+     text-align: center;
+ }
+ .unidadN{
+    width: 12.5%;
+    text-align: center;
+ }
+ .fila>td:last-child{
+    display: flex;
+    justify-content: center;
+}
+.fila>td>a{
+    padding-right: 7px;
+} 
+thead>tr>td{
+    background: var(--bg-P);
+    padding: 8px;
+    color: white;
+    border-right: 1px solid grey;
+ }
+ tbody>tr>td{
+    border-right: grey 1px solid;
+    padding: 5px;
+    text-align: center; 
+ } 
+ .accion{
+    border: none;
+}
+.tabla{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 65%;
+    
+}
+tbody>.fila:hover{
+    background: rgba(128, 128, 128, 0.37);
+    color: white;
+ }
+.fila{
+    height: 20px;
+    width: 100%;
+}
+.contenedor-clave{
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 7px;
+ }
+
+/*scrollbar-table*/
+
+.my-custom-scrollbar {
+    position: sticky;
+    overflow: auto;
+    }
+    thead tr td{ 
+        position: sticky;
+        top: 0;
+    }
+    .tabla{
+        height: 75vh;
+    }
+
+    .filtro{
+        display: flex;
+        width: 100%;
+        justify-content: end; 
+    }
+
+    .filtro>div{
+        padding-right: 10px;
+        padding-bottom: 20px;
+    }
+    .filtro>div:last-child{
+        padding-right: 20px;
+    }
+.filtro>div:first-child{
+    padding-right: 15px;
+}
+
