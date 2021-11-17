@@ -7,6 +7,11 @@
     <title>Plantilla</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
+    <link rel="stylesheet" href="css/gastos.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+
 
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
@@ -20,8 +25,8 @@
                         <div class="menuBar">
                                         
                             <ul class="principal">
-                                <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
-                                <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
+                            <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                            <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                             <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                             <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                             <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
@@ -56,10 +61,11 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                <br>
-                                <h1>Columna 1</h1>
-                                <h3>Tamaño de largo=> width:80%</h3>
-                            </div><!--Cierre de div datos-->
+                            <div class="graf">
+                                <canvas id="grafica"></canvas>
+                                <script src="js/gastos.js"> </script>
+                            </div>
+                        </div><!--Cierre de div datos-->
                     </div>
                     <div class="columna-2">
                                 <br>

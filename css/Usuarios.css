@@ -76,9 +76,9 @@ button:hover{
 }
 .form{
     display: flex;
-    background: #C6C5C5;
+    background: white;
     padding: 10px;
-    box-shadow: 10px 5px 5px black;
+    box-shadow:  2px 2px 2px 2px #CBCCCD;
 }
 .seccion1{
     padding: 10px;
