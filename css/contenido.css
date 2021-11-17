@@ -59,7 +59,7 @@ body{
         flex-direction: column;
         justify-content: space-evenly;
         height: 60vh;
-        padding-top:20px ;
+        padding-top:10px;
     }
     .principal>a>img, .secundario>a>img{
         width: 20px;
