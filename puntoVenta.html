@@ -11,7 +11,7 @@
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="puntoVenta.html">
+        <link rel="stylesheet" href="css/puntoVenta.css">
     
 </head>
 <body>
@@ -64,15 +64,82 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                <br>
-                                <h1>Columna 1</h1>
-                                <h3>Tamaño de largo=> width:80%</h3>
+                            <h1 class="titulo-pedidos">Producto en Venta</h1>
+                            <br>
+                            <div class="buscar">
+                                <label>Buscar:</label><input type="text">
+                            </div>
+                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                            
+                                <table  >
+                                    <thead>
+                                        <tr>
+                                            <td class="nameP">CLAVE</td>
+                                            <td class="unidadI">ITEM</td>
+                                            <td class="unidadN">PRECIO VENTA</td>
+                                            <td class="unidadN">DESCUENTO</td>
+                                            <td class="unidadN">ACCIÓN</td>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="fila">
+                                            <td >Producto 1</td>
+                                            <td class="P">150</td>
+                                            <td >0.10</td>
+                                            <td>5.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        
+                                        <!--No borrar-->
+                                        <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                    </tbody>
+                                </table>
+                        </div>
                             </div><!--Cierre de div datos-->
                     </div>
                     <div class="columna-2">
-                                <br>
-                                <h1>Columna 2</h1>
-                                <h3>Tamaño de largo=> width:20%</h3>
+                        <br><br><br><br>
+                        <h1 class="titulo-pedidos">Registrar Precios</h1>
+                        <br>
+                        <form action="">
+                            <div>
+                                <label>Item</label><section>:</section>
+                                <select>
+                                    <optgroup label="Sin Cargar a Inventario">
+                                        <option>Producto1</option>
+                                    </optgroup>
+                                    <optgroup label="Cargado a Inventario">
+                                        <option>Producto2s</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="division-txt">
+                                <hr>
+                                <p class="txt-infor">Información del Producto</p>
+                                <hr>
+                            </div>
+                            <div>
+                                <label>Clave</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
+                            </div>
+                            <div>
+                                <label>PrecioVenta</label><section>:</section>
+                                <input type="number">
+                            </div>
+                            <div>
+                                <label>Descuento</label><section>:</section>
+                                <input type="number">
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="btn">
+                            
+                                <button>Guardar</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->
@@ -89,24 +156,4 @@
 
 
 
-
-
-<!--aqui se agregara los precios de los productos cargados en el inventario
-
-combobox => nombre item 
-
-clave - item - Precio Venta - Estatus (Si hay o no hay en stock)
-
-
-
-
-Apartado de cotizaciones
-Al dar un boton se mostrará una ventana en donde se podra elegir el nombre del producto y la cantidad que se desea adquirir
-
-combobox => nombre del producto
-comboBox => Cantidad de unidades a adquirir
-opcion si tiene descuento o no  y si lo tiene mostrar cuanto
-input => subTotal del producto cotizado
-input => Total de la suma de productos por cotizar
--->
 
