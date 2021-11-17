@@ -106,6 +106,7 @@ form>div>label{
 }
 form>div>select{
     width: 190px;
+    padding: 3px;
 }
 form>div>input{
     width:187px;
@@ -121,6 +122,19 @@ form>div>.btn{
     width: 100%;
     text-align: right;
 }
+.btn>button{
+    background: #18975c;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+.btn>button:hover{
+    cursor: pointer;
+}
+.btn>button:active{
+    background: white;
+    color: black;
+}
 
 form>p{
     width: 100%;
@@ -135,4 +149,11 @@ form>p{
     flex-direction: column;
     text-align: center;
     
+}
+.readOnly:focus{
+    outline: none;
+    
+}
+.readOnly:hover{
+    cursor: default;
 }
