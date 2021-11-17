@@ -71,7 +71,7 @@ tbody>tr:hover{
 }
 /*Registro Usuarios*/
 button{
-    width: 10%;
+    width: 15%;
     background: #002973;
     color: white;
     padding: 5px;
@@ -100,7 +100,7 @@ button:hover{
     width: min-content;
 }
 form{
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 100px;
     padding-right: 500px;
 }
@@ -115,3 +115,9 @@ form{
         position: sticky;
         top: 0;
     }
+.form-registro{
+    display: flex;
+justify-content: center;
+padding: 5px;
+
+}

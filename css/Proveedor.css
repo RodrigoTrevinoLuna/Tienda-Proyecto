@@ -74,7 +74,7 @@ table{
 }
 
 button{
-    width: 10%;
+    width: 15%;
     background: #002973;
     color: white;
     padding: 5px;
@@ -119,4 +119,10 @@ form{
     thead tr th{ 
         position: sticky;
         top: 0;
+    }
+
+    .form-registro{
+        display: flex;
+    justify-content: center;
+    padding: 15px;
     }
