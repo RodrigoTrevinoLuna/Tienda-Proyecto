@@ -39,7 +39,7 @@ new Chart($grafica, {
         },
     }
 });
-
+/*
 //Obtener una referencia al elementos canvas del DOM
 const $grafica = document.querySelector("#grafica2");
 //Las etiquetas son las que van en el eje X.
@@ -71,5 +71,5 @@ new Chart($grafica2, {
         },
     }
 });
-
+*/
 
