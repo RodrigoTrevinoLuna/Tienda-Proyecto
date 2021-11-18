@@ -13,7 +13,14 @@
     width: 100%;
     text-align: center;
 }
-
+.columna-2>section>img{
+    width: 90px;
+    height: 90px;
+}
+.titulo-form{
+    text-align: center;
+    padding-top: 30px;
+}
 /* Estilos Carrito*/
 .datos{
     padding: 15px 20px 0px 20px;

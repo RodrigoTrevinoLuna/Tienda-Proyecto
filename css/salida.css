@@ -1,23 +1,27 @@
 .columna-1{
-    width: 75%;
+    width: 100%;
     
 }
 
-.columna-2{
-    width: 25%;
-    padding: 15px;
-    background: rgba(128, 128, 128, 0.26);
+
+.titulo-pedidos{
+    width: 100%;
+    text-align: center;
 }
+
 .datos{
     padding: 15px 20px 0px 20px;
 }
 
+.clave{
+    font-size: 21px;
+    
+}
 table{
     display: table;
-    width: 100%; 
+    width: 80%; 
     border-collapse: collapse ;
     border-bottom: grey 1px solid;
-    /*height: 550px;*/
     box-shadow: 2px 2px #888888;
     background: rgba(128, 128, 128, 0.26);
 }
@@ -68,11 +72,7 @@ tbody>.fila:hover{
     height: 20px;
     width: 100%;
 }
-.contenedor-clave{
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-bottom: 7px;
- }
+
 
 /*scrollbar-table*/
 
@@ -85,7 +85,9 @@ tbody>.fila:hover{
         top: 0;
     }
     .tabla{
-        height: 75vh;
+        height: 65%;
+        padding-left: 60px;
+        padding-right: 0px;
     }
 
     .filtro{

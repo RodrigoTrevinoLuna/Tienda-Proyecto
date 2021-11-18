@@ -8,6 +8,15 @@
     padding: 15px;
     background: rgba(128, 128, 128, 0.26);
 }
+.columna-2>section>img{
+    width: 90px;
+    height: 90px;
+}
+.titulo-form{
+    text-align: center;
+    padding-top: 35px;
+}
+
 
 .titulo-pedidos{
     width: 100%;
