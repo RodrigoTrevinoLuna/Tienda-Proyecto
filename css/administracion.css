@@ -8,9 +8,17 @@
     padding: 15px;
     background: rgba(128, 128, 128, 0.26);
 }
+.columna-2>section>img{
+    width: 90px;
+    height: 90px;
+}
 .titulo-pedidos{
     width: 100%;
     text-align: center;
+}
+.titulo-form{
+    text-align: center;
+    padding-top: 35px;
 }
 
 /* Estilos Carrito*/
@@ -119,6 +127,78 @@ text-align: center;
       right: 70px;
       padding-bottom: 15px;
       } 
+/* Nivel permisos */
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+form>div{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+form>div>label{
+    width: 60px;
+}
+form>div>select{
+    width: 190px;
+    padding: 3px;
+}
+form>div>input{
+    width:187px;
+}
+form>div>section{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+form>div>.btn{
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+    text-align: right;
+}
+.btn>button{
+    background: #18975c;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+.btn>button:hover{
+    cursor: pointer;
+}
+.btn>button:active{
+    background: white;
+    color: black;
+}
+
+form>p{
+    width: 100%;
+    text-align: center;
+}
+.txt-infor{
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+.division-txt{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.readOnly:focus{
+    outline: none;
+    
+}
+.readOnly:hover{
+    cursor: default;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 
 
