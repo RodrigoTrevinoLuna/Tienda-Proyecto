@@ -6,5 +6,120 @@
 .columna-2{
     width: 25%;
     padding: 15px;
-    background: #888888;
+    background: rgba(128, 128, 128, 0.26);
 }
+.titulo-pedidos{
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos Carrito*/
+.datos{
+    padding: 15px 20px 0px 20px;
+}
+
+.clave{
+    font-size: 21px;
+}
+table{
+    display: table;
+    width: 100%; 
+    border-collapse: collapse ;
+    border-bottom: grey 1px solid;
+    height: 450px;
+    box-shadow: 2px 2px #888888;
+}
+.nameP{
+   width: 10%;
+   text-align: center;
+}
+.unidadN{
+   width: 12.5%;
+   text-align: center;
+}
+.unidadI{
+    width: 25%;
+    text-align: center;
+}
+thead>tr>td{
+   background: var(--bg-P);
+   padding: 8px;
+   color: white;
+   border-right: 1px solid grey;
+}
+
+tbody>tr>td{
+   border-right: grey 1px solid;
+   padding: 5px;
+   text-align: center; 
+   
+}
+.tabla{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 65%;
+    
+}
+table{
+background: rgba(128, 128, 128, 0.26);
+display: table;
+width: 100%; 
+border-collapse: collapse ;
+
+}
+
+tbody>.fila:hover{
+   background: rgba(128, 128, 128, 0.37);
+   color: white;
+}
+.P{
+    text-align: left;
+
+}
+.contenedor-clave{
+   padding-top: 20px;
+   padding-left: 15px;
+   padding-bottom: 7px;
+}
+
+.fila{
+height: 20px;
+width: 100%;
+text-align: center;
+}
+.fila>td:last-child{
+    display: flex;
+    justify-content: center;
+}
+.fila>td>a{
+    padding-right: 7px;
+}
+.accion{
+    border: none;
+}
+/*scrollbar-table*/
+
+.my-custom-scrollbar {
+    position: sticky;
+    overflow: auto;
+    }
+    thead tr td{ 
+        position: sticky;
+        top: 0;
+    }
+    .tabla{
+        height: 75vh;
+    }
+
+    
+  .buscar{
+      width: 100%;
+      text-align: right;
+      position: relative;
+      right: 70px;
+      padding-bottom: 15px;
+      } 
+
+
+
+

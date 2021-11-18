@@ -17,7 +17,6 @@
     padding-top: 35px;
 }
 
-
 .titulo-pedidos{
     width: 100%;
     text-align: center;
@@ -81,7 +80,6 @@ tbody>tr>td{
    border-right: grey 1px solid;
    padding: 5px;
    text-align: center; 
-   
 }
 .accion{
     border: none;
@@ -109,7 +107,6 @@ tbody>.fila:hover{
     text-align: left;
 
 }
-
 .contenedor-clave{
    padding-top: 20px;
    padding-left: 15px;
