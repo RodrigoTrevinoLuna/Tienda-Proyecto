@@ -11,7 +11,7 @@
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="css/Plantilla.css">
+        <link rel="stylesheet" href="css/salida.css">
     
 </head>
 <body>
@@ -64,20 +64,78 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                <br>
-                                <h1>Columna 1</h1>
-                                <h3>Tamaño de largo=> width:80%</h3>
-                            </div><!--Cierre de div datos-->
-                    </div>
-                    <div class="columna-2">
-                                <br>
-                                <h1>Ventas</h1>
-                                n° Factura
-                                Fecha
-                                codigo producto
-                                Descripcion (nombre del producto)
-                                Cantidad
-                                <h3>Tamaño de largo=> width:20%</h3>
+                            <h1 class="titulo-pedidos">Salidas de Mercancias</h1>
+                            <br>
+                            <div class="filtro">
+                                <div><label>Fecha:</label><input type="date"></div>
+                                <div><label>Buscar:</label><input type="text"></div>
+                            </div>
+                            
+                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td class="nameP">CLAVE</td>
+                                            <td class="unidadI">ITEM</td>
+                                            <td class="unidadI">PROVEEDOR</td>
+                                            <td class="unidadN">PRECIO UN.</td>
+                                            <td class="unidadN">UNIDADES SALIENTES</td>
+                                            <td class="unidadN">IMPORTE</td>
+                                            <td class="UnidadN">ACCION</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="fila">
+                                            <td>A-1</td>
+                                            <td class="P">Producto 1</td>
+                                            <td class="P">Proveedor 1</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>A-2</td>
+                                            <td class="p">Producto 2</td>
+                                            <td class="p">Proveedor 2</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>A-2</td>
+                                            <td class="p">Producto 2</td>
+                                            <td class="p">Proveedor 2</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>A-2</td>
+                                            <td class="p">Producto 2</td>
+                                            <td class="p">Proveedor 2</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                        <tr class="fila">
+                                            <td>A-2</td>
+                                            <td class="p">Producto 2</td>
+                                            <td class="p">Proveedor 2</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div><!--Cierre de div datos-->
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->

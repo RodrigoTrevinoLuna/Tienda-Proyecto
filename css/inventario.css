@@ -33,7 +33,6 @@
     border: 1.5px var(--bg-P) solid;
 }
 .btn-group{
-    
     right: 0px;
 }
 .btn-imprimir, .btn-nProducto{
@@ -49,7 +48,6 @@
 .btn-imprimir:active, .btn-nProducto:active{
     background: white;
 }
-
 
 .table-inventario{
   width: 100%; 
@@ -75,8 +73,6 @@ thead>tr>td{
    background: var(--bg-P);
    padding: 7px;
    color: white;
-   border-radius: 5px;
-   
 }
 
 tbody>tr>td{
