@@ -17,24 +17,24 @@
                         
                 <ul class="principal">
                     <!--Ventas-->
-                    <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
-                    <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
+                    <a href="cajero.php"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                    <a href="puntoVenta.php"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                     <hr>
                     <!--Stock-->
-                    <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
-                    <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
-                    <a href="pedidos.html"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                    <a href="entrada.html"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
-                    <a href="salida.html"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
+                    <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
+                    <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
+                    <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
+                    <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                    <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                     <hr>
                     <!---->
-                    <a href="administracion.html"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
-                    <a href="usuarios.html"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
-                    <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
+                    <a href="administracion.php"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
+                    <a href="usuarios.php"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
+                    <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                     <hr>
                     <!---->
-                    <a href="ventas.html"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                    <a href="gastos.html"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                    <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
+                    <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
                 </ul>
                 <ul class="secundario">
                    <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
