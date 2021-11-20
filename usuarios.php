@@ -141,10 +141,10 @@
                                                     <h3 style="text-align: center; width: 100%;">Editar Datos de Usuario</h3>
                                                 
                                                 <button class="close-modal btn-modal" aria-label="close modal" data-close>
-                                                    ✕  
+                                                            <p>X</p> 
                                                 </button>
                                                 </header>
-                                                <form class="modal-form"method="POST" action="php/editarGuardar.php">
+                                                <form class="modal-form" method="POST" action="php/editarGuardar.php">
                                                 <section class="modal-content">
                                                     
                                                     <!--INICIO DEL Formulario-->
@@ -156,11 +156,11 @@
                                                             <div><label>Contraseña</label><input type="text" value="<?php echo $usuario->password ?>" name="password"></div>
                                                             <div><label>Telefono</label><input type="text" value="<?php echo $usuario->telefono ?>" name="tel"></div>
                                                             <div><label>Apellido Materno</label><input type="text"  value="<?php echo $usuario->apellidoM ?>" name="apellidoM"></div>
-                                                            <div><label>Direccion</label><input type="text" value="<?php echo $usuario->direccion ?>"  name="direccion"></div>
+                                                            <div><label>Direccion</label><textarea type="text"  name="direccion"><?php echo $usuario->direccion ?></textarea></div>
                                                     <!--Fin del Formulario-->
                                                 </section>
-                                                <footer class="modal-footer" style="text-align: right;">
-                                                <button style="width: max-content;">Guardar</button>
+                                                <footer class="modal-footer">
+                                                <button >Guardar</button>
                                                 </footer>
                                                 </form>
                                             </div>
@@ -174,12 +174,12 @@
                                                     <h3 style="text-align: center; width: 100%;">ELIMINAR Datos de Usuario</h3>
                                                 
                                                 <button class="close-modal btn-modal" aria-label="close modal" data-close>
-                                                    ✕  
+                                                    <p>X</p>  
                                                 </button>
                                                 </header>
                                                 <form class="modal-form"method="POST" action="php/eliminarUsuario.php">
                                                 <section class="modal-content">
-                                                    <h1>¿Estas seguro que deseas Eliminar a este usuario?</h1>
+                                                    <p>¿Estas seguro que deseas Eliminar a este usuario?</p>
                                                     <!--INICIO DEL Formulario-->
                                                             <div><label>Clave</label><input  type="text" value="<?php echo $usuario->id_usuario ?>" name="id_usuario" readonly></div>
                                                             <div><label>Nombre</label><input  type="text" value="<?php echo $usuario->nombre ?>" name="nombre" readonly></div>
@@ -189,11 +189,11 @@
                                                             <div><label>Contraseña</label><input type="text" value="<?php echo $usuario->password ?>" name="password" readonly></div>
                                                             <div><label>Telefono</label><input type="text" value="<?php echo $usuario->telefono ?>" name="tel" readonly></div>
                                                             <div><label>Apellido Materno</label><input type="text"  value="<?php echo $usuario->apellidoM ?>" name="apellidoM" readonly></div>
-                                                            <div><label>Direccion</label><input type="text" value="<?php echo $usuario->direccion ?>"  name="direccion" readonly></div>
+                                                            <div><label>Direccion</label><textarea type="text"  name="direccion" readonly><?php echo $usuario->direccion ?></textarea></div>
                                                     <!--Fin del Formulario-->
                                                 </section>
                                                 <footer class="modal-footer" style="text-align: right;">
-                                                <button style="width: max-content; background: red;">Eliminar</button>
+                                                <button style="width: max-content;">Eliminar</button>
                                                 </footer>
                                                 </form>
                                             </div>
