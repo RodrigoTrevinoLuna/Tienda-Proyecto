@@ -1,3 +1,7 @@
+<?php session_start();
+    if(!isset($_SESSION["carrito"])) $_SESSION["carrito"] = [];
+    $granTotal = 0;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,23 +19,24 @@
                                        
                            <ul class="principal">
                             <!--Ventas-->
-                                <a href="cajero.php"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
-                                <a href="puntoVenta.php"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
+                                <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                                <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                                 <hr>
                                 <!--Stock-->
-                                <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
-                                <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
-                                <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
-                                <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
+                                <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
+                                <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
+                                <a href="pedidos.html"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
+                                <a href="entrada.html"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                <a href="salida.html"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
-                                <a href="usuarios.php"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
-                                <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
+                                <a href="administracion.html"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
+                                <a href="usuarios.html"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
+                                <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                                <a href="ventas.html"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
+                                <a href="gastos.html"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
                                 
                            </ul>
                            <ul class="secundario">
@@ -46,12 +51,56 @@
                             <div class="div-titulo">
                                 <h2 class="titulo"> Registro de Ventas</h2>
                             </div>
-                            <div class="contenedor-clave"><label class="clave">Clave: <input  class="producto" type="text"></label></div>
+                            <div class="contenedor-clave"><form method="POST" action="php/agregarAlCarrito.php"><label class="clave">Clave: <input autocomplete="off" autofocus class="producto" type="text" name="codigo"></label></form></div>
+
+                            <!--Alertas php-->
+                            <?php
+                                        if(isset($_GET["status"])){
+                                            if($_GET["status"] === "1"){
+                                                ?>
+                                                    <div class="alert alert-success">
+                                                        <strong>¡Correcto!</strong> Venta realizada correctamente
+                                                    </div>
+                                                <?php
+                                            }else if($_GET["status"] === "2"){
+                                                ?>
+                                                <div class="alert alert-info">
+                                                        <strong>Venta cancelada</strong>
+                                                    </div>
+                                                <?php
+                                            }else if($_GET["status"] === "3"){
+                                                ?>
+                                                <div class="alert alert-info">
+                                                        <strong>Ok</strong> Producto quitado de la lista
+                                                    </div>
+                                                <?php
+                                            }else if($_GET["status"] === "4"){
+                                                ?>
+                                                <div class="alert alert-warning">
+                                                        <strong>Error:</strong> El producto que buscas no existe
+                                                    </div>
+                                                <?php
+                                            }else if($_GET["status"] === "5"){
+                                                ?>
+                                                <div class="alert alert-danger">
+                                                        <strong>Error: </strong>El producto está agotado
+                                                    </div>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <div class="alert alert-danger">
+                                                        <strong>Error:</strong> Algo salió mal mientras se realizaba la venta
+                                                    </div>
+                                                <?php
+                                            }
+                                        }
+                                    ?>
                             <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
                                 
                                 <table >
                                     <thead>
                                         <tr>
+                                            <td >CLAVE</td>    
                                             <td class="nameP">PRODUCTO</td>
                                             <td class="unidadN">PRECIO UNIT</td>
                                             <td class="unidadN">DESCTO</td>
@@ -62,162 +111,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--PHP-->
+                                    <?php foreach($_SESSION["carrito"] as $indice => $producto){ 
+	                                            $granTotal = $producto  -> total + $granTotal;
+                                        ?><!-- FIN PHP-->
+
                                         <tr class="fila">
-                                            <td class="P">Producto 1</td>
-                                            <td>150</td>
-                                            <td>0.10</td>
-                                            <td>5.00</td>
-                                            <td>675.00</td>
+                                            <td><?php echo $producto->codigo?></td>
+                                            <td class="P"><?php echo $producto->item?></td>
+                                            <td><?php echo $producto->precioVenta?></td>
+                                            <td>descuentos </td>
+                                            <td><?php echo $producto->cantidad?></td>
+                                            <td><?php echo $producto->total?></td>
                                         </tr>
-                                        <tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.00</td>
-                                            <td>3.00</td>
-                                            <td>450.00</td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.20</td>
-                                            <td>3.00</td>
-                                            <td>360.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr><tr class="fila">
-                                            <td class="P">Producto 2</td>
-                                            <td>150</td>
-                                            <td>0.30</td>
-                                            <td>3.00</td>
-                                            <td>315.00</td>
-                                        </tr>
-                                   
+                                            <?php } ?>
                                         <!--No borrar-->
                                         <tr><td></td><td></td><td></td><td></td><td></td></tr>
                                     </tbody>
                                 </table>
                         </div>
                         <div class="resultados">
-                            <section><label>Subtotal</label><input type="text" value="1800" readonly></section>
-                            <section><label>Iva 16%</label><input type="text" value="288" readonly></section>
+                            <section><label>Subtotal</label><input type="text" value="<?php echo "$" . $granTotal; ?>" readonly></section>
+                            <section><label>Iva 16%</label><input type="text" value="<?php echo "$" . $granTotal*.16; ?>" readonly></section>
                         </div>
                     </div>
                     <div class="interaccion-venta">
                         <h1 class="txtTitulo">TOTAL</h1>
-    <input class="textboxTotal" type="text" value="$1,512.00">
+                        <?php $neto = ($granTotal*.16) + $granTotal ?>
+    <input class="textboxTotal" type="text" value="<?php echo "$" . $neto; ?>">
     
     <div class="opciones">
         <button class="btn-opcion">
@@ -248,7 +169,8 @@
 
         <button class="btn-opcion">
             <img src="imagenes/cancelar-venta.png">
-            <p>[F6] Cancelar Venta</p>
+            <a href="php/cancelarVenta.php">[F6] Cancelar Venta</a>
+            
         </button>
        <img  class="logo" src="imagenes/logo.jpg">
     </div>            
