@@ -64,7 +64,10 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                                
+                            <?php
+                                        include_once "php/bd.php";
+                                        
+                                    ?>
                                 <h1 class="titulo-pedidos">Lista de Pedidos</h1>
                                 <br>
                                 <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
@@ -74,6 +77,7 @@
                                             <tr>
                                                 <td class="nameP">CLAVE</td>
                                                 <td class="unidadI">ITEM</td>
+                                                <td class="unidadN">UNIDADES EN STOCK</td>
                                                 <td class="unidadI">PROVEEDOR</td>
                                                 <td class="unidadN">UNIDADES A PEDIR</td>
                                                 <td class="unidadN">ACCIÓN</td>
@@ -82,16 +86,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                                    $sentencia9 = $base_de_datos->query("SELECT * FROM productos,pedidos,proveedores WHERE ((productos.id = pedidos.id_productos) and (productos.id_proveedor = proveedores.id_proveedor))" );
+                                                    $pedidos = $sentencia9->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($pedidos as $pedido){ ?>
                                             <tr class="fila">
-                                                <td >Producto 1</td>
-                                                <td class="P">150</td>
-                                                <td class="P">0.10</td>
-                                                <td>5.00</td>
+                                                <td> <?php echo $pedido -> id?></td>
+                                                <td class="P"><?php echo $pedido -> item?></td>
+                                                <td class="P"><?php echo $pedido -> stock?></td>
+                                                <td class="P"><?php echo $pedido -> nombre?></td>
+                                                <td><?php echo $pedido -> pedir?></td>
                                                 <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                             </tr>
-                                            
+                                            <?php } ?>
                                             <!--No borrar-->
-                                            <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -105,15 +114,36 @@
                                 </section>
                                 
                                 <br>
-                                <form action="">
+                                <form action="php/newPedido.php" method="POST">
+                                
                                     <div>
                                         <label>Item</label><section>:</section>
-                                        <select>
-                                            <optgroup label="Sin Cargar a Inventario">
-                                                <option>Producto1</option>
+                                        <select name="id">
+                                        <option selected="true" disabled="disabled">Seleccione uno</option>
+                                            <optgroup label="Stock en cero">
+                                            
+                                                <?php
+                                                    $sentencia2 = $base_de_datos->query("SELECT * FROM productos WHERE stock=0;");
+                                                    $productos = $sentencia2->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos as $producto){ ?>
+                                                <option value="<?php echo $producto->id ?>"><?php echo $producto->item ?></option>
+                                                <?php } ?>
                                             </optgroup>
-                                            <optgroup label="Cargado a Inventario">
-                                                <option>Producto2s</option>
+                                            <optgroup label="Stock de 1-5">
+                                            <?php
+                                                    $sentencia3 = $base_de_datos->query("SELECT * FROM `productos` WHERE (stock>=1) and (stock<=5);");
+                                                    $productos3 = $sentencia3->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos3 as $producto3){ ?>
+                                                <option value="<?php echo $producto3->id ?>"><?php echo $producto3->item ?></option>
+                                                <?php } ?>
+                                            </optgroup>
+                                            <optgroup label="Stock de 6-10">
+                                            <?php
+                                                    $sentencia4 = $base_de_datos->query("SELECT * FROM `productos` WHERE (stock>=6) and (stock<=10);");
+                                                    $productos4 = $sentencia4->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos4 as $producto4){ ?>
+                                                <option value="<?php echo $producto4->id ?>"><?php echo $producto4->item ?></option>
+                                                <?php } ?>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -122,21 +152,10 @@
                                         <p class="txt-infor">Información del Producto</p>
                                         <hr>
                                     </div>
-                                    <div>
-                                        <label>Clave</label><section>:</section>
-                                        <input type="text" class="readOnly" readonly >
-                                    </div>
-                                    <div>
-                                        <label>Stock</label><section>:</section>
-                                        <input type="text" class="readOnly" readonly >
-                                    </div>
-                                    <div>
-                                        <label>Proveedor</label><section>:</section>
-                                        <input type="text" class="readOnly" readonly >
-                                    </div>
+                                   
                                     <div>
                                         <label>Pedir</label><section>:</section>
-                                        <input type="number">
+                                        <input type="number" name="pedir">
                                     </div>
                                     <hr>
                                     <div>

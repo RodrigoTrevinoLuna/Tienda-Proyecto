@@ -69,30 +69,37 @@
                                 <label>Buscar:</label><input type="text">
                             </div>
                             <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
-                            
+                            <?php
+                                include_once "php/bd.php";
+                                $sentencia = $base_de_datos->query("SELECT * FROM productos where not precioVenta=0");
+                                $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+                            ?>
                                 <table  >
                                     <thead>
+                                    
                                         <tr>
                                             <td class="nameP">CLAVE</td>
                                             <td class="unidadI">ITEM</td>
                                             <td class="unidadN">PRECIO VENTA</td>
-                                            <td class="unidadN">DESCUENTO</td>
+                                            
                                             <td class="unidadN">ACCIÓN</td>
                                             
                                             
                                         </tr>
+                                        
                                     </thead>
                                     <tbody>
+                                    <?php foreach($productos as $producto){ ?>
                                         <tr class="fila">
-                                            <td >Producto 1</td>
-                                            <td class="P">150</td>
-                                            <td >0.10</td>
-                                            <td>5.00</td>
+                                            <td ><?php echo $producto->codigo ?></td>
+                                            <td class="P"><?php echo $producto->item ?></td>
+                                            <td ><?php echo $producto->precioVenta ?></td>
+                                            
                                             <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                         </tr>
-                                        
+                                        <?php } ?>
                                         <!--No borrar-->
-                                        <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                        <tr><td></td><td></td><td></td></td><td class="accion"></td></tr>
                                     </tbody>
                                 </table>
                         </div>
@@ -103,16 +110,22 @@
                             <h1 class="titulo-pedidos">Registrar Precios</h1>
                             <img  src="imagenes/precios.png">
                         </section>
-                        <form action="">
+                        <form action="php/newPrecios.php" method="POST">
+                            
                             <div>
                                 <label>Item</label><section>:</section>
-                                <select>
-                                    <optgroup label="Sin Cargar a Inventario">
-                                        <option>Producto1</option>
+                                <select name="id">
+                                    <optgroup label="Sin Precio Venta">
+                                    <option selected="true" disabled="disabled">Seleccione uno</option>
+                                    <?php 
+                                     $sentenciaA = $base_de_datos->query("SELECT * FROM productos WHERE  precioVenta=0");
+                                     $productosA = $sentenciaA->fetchAll(PDO::FETCH_OBJ);
+                                    foreach($productosA as $productoA){ 
+                                        ?>
+                                        <option value="<?php echo $productoA->id ?>"><?php echo $productoA->item ?></option>
+                                        <?php } ?>
                                     </optgroup>
-                                    <optgroup label="Cargado a Inventario">
-                                        <option>Producto2s</option>
-                                    </optgroup>
+                                    
                                 </select>
                             </div>
                             <div class="division-txt">
@@ -120,18 +133,12 @@
                                 <p class="txt-infor">Información del Producto</p>
                                 <hr>
                             </div>
-                            <div>
-                                <label>Clave</label><section>:</section>
-                                <input type="text" class="readOnly" readonly >
-                            </div>
+                        
                             <div>
                                 <label>PrecioVenta</label><section>:</section>
-                                <input type="number">
+                                <input type="number" name="venta">
                             </div>
-                            <div>
-                                <label>Descuento</label><section>:</section>
-                                <input type="number">
-                            </div>
+                            
                             <hr>
                             <div>
                                 <div class="btn">
