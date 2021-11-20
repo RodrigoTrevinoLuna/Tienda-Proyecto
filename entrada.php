@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punto de Venta</title>
+    <title>Entradas</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
 
 
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
-        <link rel="stylesheet" href="css/puntoVenta.css">
+        <link rel="stylesheet" href="css/entrada.css">
     
 </head>
 <body>
@@ -21,24 +21,23 @@
                                         
                             <ul class="principal">
                                 <!--Ventas-->
-                                <a href="cajero.html"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
-                                <a href="puntoVenta.html"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
+                                <a href="cajero.php"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
+                                <a href="puntoVenta.php"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
                                 <hr>
                                 <!--Stock-->
-                                <a href="inventario.html"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
-                                <a href="producto.html"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
-                                <a href="pedidos.html"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.html"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
-                                <a href="salida.html"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
+                                <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
+                                <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
+                                <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
+                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
-                                <a href="administracion.html"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
-                                <a href="usuarios.html"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
-                                <a href="proveedores.html"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
+                                <a href="usuarios.php"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
+                                <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.html"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.html"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
+                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
                             </ul>
                             <ul class="secundario">
                             <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
@@ -60,24 +59,29 @@
                     <div class="columna-1" >
                         <!--Etiqueta para agregar el titulo No mover-->
                         <div class="div-titulo">
-                            <h2 class="titulo"> Punto de Venta</h2>
+                            <h2 class="titulo"> Entradas</h2>
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
-                            <h1 class="titulo-pedidos">Producto en Venta</h1>
-                            <br>
-                            <div class="buscar">
-                                <label>Buscar:</label><input type="text">
-                            </div>
-                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
-                            
-                                <table  >
+                               <h1 class="titulo-pedidos">Entrada de Mercancias</h1>
+                               <br>
+                               <div class="filtro">
+                                   <div><label>Fecha:</label><input type="date"></div>
+                                   <div><label>Buscar:</label><input type="text"></div>
+                               </div>
+
+                               
+
+                               <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                                
+                                <table >
                                     <thead>
                                         <tr>
                                             <td class="nameP">CLAVE</td>
                                             <td class="unidadI">ITEM</td>
-                                            <td class="unidadN">PRECIO VENTA</td>
-                                            <td class="unidadN">DESCUENTO</td>
+                                            <td class="unidadI">PROVEEDOR</td>
+                                            <td class="unidadN">IMPORTE</td>
+                                            <td class="unidadN">UNIDADES PEDIDAS</td>
                                             <td class="unidadN">ACCIÓN</td>
                                             
                                             
@@ -85,35 +89,46 @@
                                     </thead>
                                     <tbody>
                                         <tr class="fila">
-                                            <td >Producto 1</td>
-                                            <td class="P">150</td>
-                                            <td >0.10</td>
+                                            <td>A-1</td>
+                                            <td class="P">Producto 1</td>
+                                            <td class="P">Tienda-1</td>
+                                            <td>1000</td>
                                             <td>5.00</td>
                                             <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                         </tr>
-                                        
+                                        <tr class="fila">
+                                            <td>A-1</td>
+                                            <td class="P">Producto 1</td>
+                                            <td class="P">Tienda-1</td>
+                                            <td>9000</td>
+                                            <td>5.00</td>
+                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                        </tr>
+                                       
+                                     
+                                       
                                         <!--No borrar-->
-                                        <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
                                     </tbody>
                                 </table>
                         </div>
-                            </div><!--Cierre de div datos-->
+                        </div><!--Cierre de div datos-->
+                        
                     </div>
                     <div class="columna-2">
                         <section class="titulo-form">
-                            <h1 class="titulo-pedidos">Registrar Precios</h1>
-                            <img  src="imagenes/precios.png">
+                            <h1 class="titulo-pedidos">Nueva Entrada</h1>
+                            <img  src="imagenes/nuevo-producto.png">
                         </section>
                         <form action="">
                             <div>
                                 <label>Item</label><section>:</section>
                                 <select>
-                                    <optgroup label="Sin Cargar a Inventario">
+                                    
                                         <option>Producto1</option>
-                                    </optgroup>
-                                    <optgroup label="Cargado a Inventario">
+                                    
                                         <option>Producto2s</option>
-                                    </optgroup>
+                                    
                                 </select>
                             </div>
                             <div class="division-txt">
@@ -126,21 +141,26 @@
                                 <input type="text" class="readOnly" readonly >
                             </div>
                             <div>
-                                <label>PrecioVenta</label><section>:</section>
-                                <input type="number">
+                                <label>Importe</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
                             </div>
                             <div>
-                                <label>Descuento</label><section>:</section>
+                                <label>Proveedor</label><section>:</section>
+                                <input type="text" class="readOnly" readonly >
+                            </div>
+                            <div>
+                                <label>Unidades</label><section>:</section>
                                 <input type="number">
                             </div>
                             <hr>
                             <div>
                                 <div class="btn">
                             
-                                <button>Guardar</button>
+                                <button>Guardar Registro</button>
                                 </div>
                             </div>
                         </form>
+
                     </div>
                     
                     <!--Aqui agregar si queires mas columnaas-->
@@ -150,11 +170,3 @@
     
 </body>
 </html>
-
-
-
-
-
-
-
-
