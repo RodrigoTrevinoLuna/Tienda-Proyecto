@@ -105,21 +105,7 @@ text-align: center;
 .accion{
     border: none;
 }
-/*scrollbar-table*/
 
-.my-custom-scrollbar {
-    position: sticky;
-    overflow: auto;
-    }
-    thead tr td{ 
-        position: sticky;
-        top: 0;
-    }
-    .tabla{
-        height: 75vh;
-    }
-
-    
   .buscar{
       width: 100%;
       text-align: right;
@@ -199,7 +185,6 @@ form>p{
 ::-webkit-scrollbar {
     display: none;
 }
-
 
 
 
