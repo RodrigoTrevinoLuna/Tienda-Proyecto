@@ -86,8 +86,12 @@
                                         </div>
                                         <div class="seccion3" >
                                             <label>Apellido Materno<input type="text" placeholder="Ingrese su Apellido" name="apellidoM"></label>
-                                            <label>Confirmar contraseña<input type="text" placeholder=""></label>
                                             <label>Direccion<input type="text" placeholder="Ingrese su Direccion" name="direccion"></label>
+                                            <label>Nivel de Acceso<select name="nivelacceso">
+                                                <option selected="true" disabled="disabled">Seleccione uno</option>
+                                                <option value="Empleado">Empleado</option>
+                                                <option value="Administrador">Administrador</option>
+                                            </select></label>
                                         </div>
                             </div>
                                 <button type="submit">Registrar</button>
@@ -114,6 +118,7 @@
                                         <th class="nameP">Correo Electronico</th>
                                         <th class="nameP">Telefono</th>
                                         <th class="nameP">Direccion</th>
+                                        <th class="nameP">Permisos</th>
                                         <th class="dat">Acción</th>
                                     </tr>
                                 </thead>
@@ -130,6 +135,7 @@
                                         <td><?php echo $usuario->correo ?></td>
                                         <td><?php echo $usuario->telefono ?></td>
                                         <td ><?php echo $usuario->direccion ?></td>
+                                        <td ><?php echo $usuario->Permiso ?></td>
                                         <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $usuario->id_usuario ?>">Editar</a><a href="#" type="button" data-open="modaleliminar<?php echo $usuario->id_usuario ?>">Eliminar</a></td>
                                     </tr>
 
@@ -141,10 +147,10 @@
                                                     <h3 style="text-align: center; width: 100%;">Editar Datos de Usuario</h3>
                                                 
                                                 <button class="close-modal btn-modal" aria-label="close modal" data-close>
-                                                    ✕  
+                                                            <p>X</p> 
                                                 </button>
                                                 </header>
-                                                <form class="modal-form"method="POST" action="php/editarGuardar.php">
+                                                <form class="modal-form" method="POST" action="php/editarGuardar.php">
                                                 <section class="modal-content">
                                                     
                                                     <!--INICIO DEL Formulario-->
@@ -156,11 +162,16 @@
                                                             <div><label>Contraseña</label><input type="text" value="<?php echo $usuario->password ?>" name="password"></div>
                                                             <div><label>Telefono</label><input type="text" value="<?php echo $usuario->telefono ?>" name="tel"></div>
                                                             <div><label>Apellido Materno</label><input type="text"  value="<?php echo $usuario->apellidoM ?>" name="apellidoM"></div>
-                                                            <div><label>Direccion</label><input type="text" value="<?php echo $usuario->direccion ?>"  name="direccion"></div>
+                                                            <div><label>Nivel de Acceso</label><select name="nivelacceso">
+                                                                    <option selected="true"><?php echo $usuario->Permiso ?></option>
+                                                                    <option value="Empleado">Empleado</option>
+                                                                    <option value="Administrador">Administrador</option>
+                                                                    </select></div>
+                                                            <div><label>Direccion</label><textarea type="text"  name="direccion"><?php echo $usuario->direccion ?></textarea></div>
                                                     <!--Fin del Formulario-->
                                                 </section>
-                                                <footer class="modal-footer" style="text-align: right;">
-                                                <button style="width: max-content;">Guardar</button>
+                                                <footer class="modal-footer">
+                                                <button >Guardar</button>
                                                 </footer>
                                                 </form>
                                             </div>
@@ -174,12 +185,12 @@
                                                     <h3 style="text-align: center; width: 100%;">ELIMINAR Datos de Usuario</h3>
                                                 
                                                 <button class="close-modal btn-modal" aria-label="close modal" data-close>
-                                                    ✕  
+                                                    <p>X</p>  
                                                 </button>
                                                 </header>
                                                 <form class="modal-form"method="POST" action="php/eliminarUsuario.php">
                                                 <section class="modal-content">
-                                                    <h1>¿Estas seguro que deseas Eliminar a este usuario?</h1>
+                                                    <p>¿Estas seguro que deseas Eliminar a este usuario?</p>
                                                     <!--INICIO DEL Formulario-->
                                                             <div><label>Clave</label><input  type="text" value="<?php echo $usuario->id_usuario ?>" name="id_usuario" readonly></div>
                                                             <div><label>Nombre</label><input  type="text" value="<?php echo $usuario->nombre ?>" name="nombre" readonly></div>
@@ -189,11 +200,12 @@
                                                             <div><label>Contraseña</label><input type="text" value="<?php echo $usuario->password ?>" name="password" readonly></div>
                                                             <div><label>Telefono</label><input type="text" value="<?php echo $usuario->telefono ?>" name="tel" readonly></div>
                                                             <div><label>Apellido Materno</label><input type="text"  value="<?php echo $usuario->apellidoM ?>" name="apellidoM" readonly></div>
-                                                            <div><label>Direccion</label><input type="text" value="<?php echo $usuario->direccion ?>"  name="direccion" readonly></div>
+                                                            <div><label>Nivel Acceso</label><input type="text"  value="<?php echo $usuario->Permiso ?>" name="apellidoM" readonly></div>
+                                                            <div><label>Direccion</label><textarea type="text"  name="direccion" readonly><?php echo $usuario->direccion ?></textarea></div>
                                                     <!--Fin del Formulario-->
                                                 </section>
                                                 <footer class="modal-footer" style="text-align: right;">
-                                                <button style="width: max-content; background: red;">Eliminar</button>
+                                                <button style="width: max-content;">Eliminar</button>
                                                 </footer>
                                                 </form>
                                             </div>
