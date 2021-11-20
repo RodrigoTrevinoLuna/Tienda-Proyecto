@@ -28,7 +28,6 @@
                     <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                     <hr>
                     <!---->
-                    <a href="administracion.php"><img src="imagenes/iconos/administracion.png"><P>administración</P></a>
                     <a href="usuarios.php"><img src="imagenes/iconos/usuarios.png"><P>Usuarios</P></a>
                     <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                     <hr>
