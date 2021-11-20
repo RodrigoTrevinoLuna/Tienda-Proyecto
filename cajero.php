@@ -11,6 +11,8 @@
     <title>Caja</title>
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/cajero.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -106,6 +108,7 @@
                                             <td class="unidadN">DESCTO</td>
                                             <td class="unidadN">CANT</td>
                                             <td class="unidadT">IMPORTE</td>
+                                            <td id="contenido">ACCIÓN</td>
                                             
                                             
                                         </tr>
@@ -117,16 +120,19 @@
                                         ?><!-- FIN PHP-->
 
                                         <tr class="fila">
+                                            
                                             <td><?php echo $producto->codigo?></td>
                                             <td class="P"><?php echo $producto->item?></td>
                                             <td><?php echo $producto->precioVenta?></td>
                                             <td>descuentos </td>
                                             <td><?php echo $producto->cantidad?></td>
                                             <td><?php echo $producto->total?></td>
+                                            <td id="contenido"><a href="<?php echo "php/quitarDelCarrito.php?indice=" . $indice?>" >Quitar</a></td>
+                                            
                                         </tr>
                                             <?php } ?>
                                         <!--No borrar-->
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td style="border-right: 1px solid black;"></td></tr>
                                     </tbody>
                                 </table>
                         </div>
@@ -140,38 +146,35 @@
                         <?php $neto = ($granTotal*.16) + $granTotal ?>
     <input class="textboxTotal" type="text" value="<?php echo "$" . $neto; ?>">
     
+    
+    
+    
     <div class="opciones">
-        <button class="btn-opcion">
+        <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
             <img src="imagenes/cobrar.png">
-            <p>[F4] Cobrar</p>
+            <p>[1] Cobrar</p>
         </button>
-
+        
         <button class="btn-opcion">
             <img src="imagenes/retiro.png">
-            <p>[F1] Retiro</p>
+            <p>[2] Retiro</p>
             
         </button>
 
-        <button class="btn-opcion">
+        <button class="btn-opcion" type="button" data-open="modalBuscar" accesskey="3">
             <img src="imagenes/buscar.png">
-            <p>[F3] Buscar</p>
+            <p>[3] Buscar</p>
         </button>
 
-        <button class="btn-opcion">
-            <img src="imagenes/editar.png">
-            <p> [F2] Editar</p>
-        </button>
+    
 
-        <button class="btn-opcion">
-            <img src="imagenes/eliminar.png">
-            <p>[F5] Eliminar Producto</p>
-        </button>
-
-        <button class="btn-opcion">
+        <button accesskey="6" class="btn-opcion" role="link" onclick="window.location='php/cancelarVenta.php'" >
             <img src="imagenes/cancelar-venta.png">
-            <a href="php/cancelarVenta.php">[F6] Cancelar Venta</a>
+             [6] Cancelar Venta
             
         </button>
+        
+        
        <img  class="logo" src="imagenes/logo.jpg">
     </div>            
                     </div>
@@ -186,5 +189,108 @@
                 
                 
                 </div><!--Fin del div Container-->  
-</body>
+
+
+ <!--Modal Buscar item-->
+ <div class="modal" id="modalBuscar" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Listado de Productos</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                    <p>X</p>  
+                                                </button>
+                                                </header>
+                                                
+                                                <section class="modal-content">
+                                                    
+                                                <div class="tabla-modal my-custom-scrollbar-modal table-wrapper-scroll-y-modal">
+                                
+                                <table class="tabla-modal">
+                                    <thead>
+                                        <tr class="item">
+                                            <th class="unidadN">CLAVE</th>
+                                            <th class="name">ITEM</th>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        include_once "php/bd.php";
+                                        $sentencia = $base_de_datos->query("SELECT * FROM productos;");
+                                        $ITEMS = $sentencia->fetchAll(PDO::FETCH_OBJ);
+                                    ?>
+                                    <?php foreach($ITEMS as $ITEM){ ?>
+                                        <tr class="fila">
+                                            <td><?php echo $ITEM->codigo?></td>
+                                            <td><?php echo $ITEM->item ?></td>
+                                           
+                                        </tr>
+                                        <?php } ?>
+                                        
+                                   
+                                        <!--No borrar-->
+                                        <tr><td></td><td></td></tr>
+                                    </tbody>
+                                </table>
+                        </div>
+
+
+                                                </section>
+                                                <footer class="modal-footer" style="text-align: right;">
+                                                
+                                                </footer>
+                                                
+                                            </div>
+                                            </div><!-- FIN DELModal ELIMINAR usuario-->    
+
+ <!--Modal Terminar venta-->
+ <div class="modal" id="modalCobrar" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Terminar Venta</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                            <p>X</p> 
+                                                </button>
+                                                </header>
+                                                <form class="modal-form" method="POST" action="php/terminarVenta.php">
+                                                <section class="modal-content">
+                                                    
+                                                    <!--INICIO DEL Formulario-->
+                                                    
+                                                        <div><label>Cobrar</label><p>$</p><input  type="text" value="<?php echo $neto ?>" name="total"  id="cobrar" style="text-align: center;" readonly oninput="cal()"></div>    
+                                                        <div><label>Pago</label><p>$</p><input autocomplete="off" autofocus type="text" id="pago"  style="text-align: center;" oninput="cal()"></div>
+                                                        <div><label>Cambio</label><input id="cambio"></div>
+                                                        
+                                                           
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer">
+                                                    <button>Terminar Venta </button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal Editar usuario-->
+
+                                            <script src="JS/modal.js"></script>
+                                            <script>
+                                               function cal() {
+  try {
+    var a = (document.getElementById("cobrar").value) || 0,
+      b = (document.getElementById("pago").value) || 0;
+
+      parseFloat(document.getElementById("cambio").value = b - a).toFixed(2) ;
+  } catch (e) {}
+}
+
+                                            </script>
+            </body>
 </html>
+
+
+
+			

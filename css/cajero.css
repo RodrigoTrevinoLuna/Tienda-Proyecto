@@ -155,7 +155,7 @@
 .opciones{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 5px;
+    padding-top: 50px;
 }
 .opciones>button{
     width: 50%;
@@ -165,7 +165,9 @@
 }
 
 
-.opciones>button:hover{
+
+
+.opciones>.btn-opcion:hover{
     background: rgba(146, 145, 145, 0.541);
     color: white;
     border: white 1.5px solid;
@@ -202,6 +204,23 @@
     overflow: auto;
     }
     thead tr td{ 
+        position: sticky;
+        top: 0;
+    }
+
+
+
+/*Estilos modal Tabla*/
+.tabla-modal{
+    height: 65%;
+    
+}
+
+.my-custom-scrollbar-modal{
+    position: sticky;
+    overflow: auto;
+    }
+    header{ 
         position: sticky;
         top: 0;
     }
