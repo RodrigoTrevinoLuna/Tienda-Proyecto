@@ -64,16 +64,21 @@
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
+                            <?php
+                                include_once "php/bd.php";
+                                $sentencia = $base_de_datos->query("SELECT * FROM permisos, usuarios WHERE permisos.id_usuario = usuarios.id_usuario;");
+                                $permisos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+                            ?>
                             <h1 class="titulo-pedidos">Permisos</h1>
                             <div class="buscar">
                                 <label>Buscar:</label><input type="text">
                             </div>
                             <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
-                            
+
                                 <table  >
                                     <thead>
                                         <tr>
-                                            <td class="nameP">CLAVE</td>
+                                            <td class="unidadI">CLAVE </td>
                                             <td class="unidadI">NOMBRE </td>
                                             <td class="unidadN">NOMBRE USUARIO</td>
                                             <td class="unidadN">NIVEL DE PERMISO</td>
@@ -83,42 +88,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach($permisos as $permiso){ ?>
                                         <tr class="fila">
-                                            <td >A-1</td>
-                                            <td class="P">Nombre Completo</td>
-                                            <td >Nombre usuario</td>
-                                            <td>Permiso</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td >A-2</td>
-                                            <td class="P">Nombre Completo</td>
-                                            <td >Nombre usuario</td>
-                                            <td>Permiso</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td >A-3</td>
-                                            <td class="P">Nombre Completo</td>
-                                            <td >Nombre usuario</td>
-                                            <td>Permiso</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td >A-4</td>
-                                            <td class="P">Nombre Completo</td>
-                                            <td >Nombre usuario</td>
-                                            <td>Permiso</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td >A-5</td>
-                                            <td class="P">Nombre Completo</td>
-                                            <td >Nombre usuario</td>
-                                            <td>Permiso</td>
+                                            <td><?php echo $permiso->id_usuario?></td>
+                                            <td class="P"><?php echo $permiso->nombre?></td>
+                                            <td ><?php echo $permiso->usuario?></td>
+                                            <td><?php echo $permiso->nivel_acceso?></td>
                                             <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                         </tr>
                                         
+                                        <?php } ?>
                                         <!--No borrar-->
                                         <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
                                     </tbody>
@@ -135,14 +114,17 @@
                             <img  src="imagenes/Nivel-permisos.png">
                         </section>
                         <br>
-                        <form action="">
+                        <form action="php/newPermiso.php" method="POST">
                             <div>
                                 <label>Usuario</label><section>:</section>
-                                <select>
-                                    
-                                        <option>Usuario 1</option>
-                                        <option>Usuario 2</option>
-                                    
+                                <select name="usuario">
+                                
+                                <option selected="true" disabled="disabled">Seleccione un Usuario</option>
+                                        <?php $sentencia2 = $base_de_datos->query("SELECT * FROM permisos, usuarios WHERE NOT(permisos.id_usuario = usuarios.id_usuario) ;");
+                                $usuarios = $sentencia2->fetchAll(PDO::FETCH_OBJ);
+                                     foreach($usuarios as $usuario){ ?>
+                                        <option value="<?php echo $usuario->id_usuario?>"><?php echo $usuario->usuario?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="division-txt">
@@ -152,10 +134,10 @@
                             </div>
                             <div>
                                 <label>Nivel Permiso</label><section>:</section>
-                                <select>
+                                <select name="nivelacceso">
                                     
-                                        <option>Administrador</option>
-                                        <option>Empleado</option>
+                                        <option value="Administrador">Administrador</option>
+                                        <option value="Empleado">Empleado</option>
                                     
                                 </select>
                             </div>
@@ -163,7 +145,7 @@
                             <div>
                                 <div class="btn">
                             
-                                <button>Guardar</button>
+                                <button type="submit">Guardar</button>
                                 </div>
                             </div>
                         </form>

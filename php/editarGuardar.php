@@ -9,13 +9,14 @@
     $correo = $_POST["correo"];
     $tel = $_POST["tel"];
     $direccion = $_POST["direccion"];
+    $nivelacceso = $_POST["nivelacceso"];
 
 
 
 
 
-    $sentencia = $base_de_datos->prepare("UPDATE usuarios SET  nombre= ?, apellidoP = ?, apellidoM = ?, usuario = ?, password = ?, correo = ?, telefono = ?, direccion = ? WHERE id_usuario = ?;");
-    $resultado = $sentencia->execute([$nombre, $apelidoP, $apelidoM, $usuario, $password, $correo, $tel, $direccion, $id_usuario]);
+    $sentencia = $base_de_datos->prepare("UPDATE usuarios SET  nombre= ?, apellidoP = ?, apellidoM = ?, usuario = ?, password = ?, correo = ?, telefono = ?, direccion = ?, Permiso = ? WHERE id_usuario = ?;");
+    $resultado = $sentencia->execute([$nombre, $apelidoP, $apelidoM, $usuario, $password, $correo, $tel, $direccion, $nivelacceso, $id_usuario]);
 
 if($resultado === TRUE){
 	header("Location: ../usuarios.php");
