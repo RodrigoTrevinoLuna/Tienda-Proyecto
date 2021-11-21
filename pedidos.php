@@ -121,9 +121,9 @@
                                             <optgroup label="Stock en cero">
                                             
                                                 <?php
-                                                    $menos= $pedido -> item;
+                                                    $menos = $pedido -> item;
                                                     
-                                                    $sentencia2 = $base_de_datos->query('SELECT * FROM productos WHERE stock=0  AND NOT(item="$menos");');
+                                                    $sentencia2 = $base_de_datos->query("SELECT * FROM productos WHERE stock=0 and not item='$menos';");
                                                     $productos = $sentencia2->fetchAll(PDO::FETCH_OBJ);
                                                  foreach($productos as $producto){ ?>
                                                 <option value="<?php echo $producto->id ?>"><?php echo $producto->item ?></option>
@@ -131,7 +131,7 @@
                                             </optgroup>
                                             <optgroup label="Stock de 1-5">
                                             <?php
-                                                    $sentencia3 = $base_de_datos->query('SELECT * FROM `productos` WHERE (stock>=1) and (stock<=5);');
+                                                    $sentencia3 = $base_de_datos->query("SELECT * FROM productos WHERE (stock>=1) and (stock<=5) and not item='$menos';");
                                                     $productos3 = $sentencia3->fetchAll(PDO::FETCH_OBJ);
                                                  foreach($productos3 as $producto3){ ?>
                                                 <option value="<?php echo $producto3->id ?>"><?php echo $producto3->item ?></option>
@@ -139,7 +139,7 @@
                                             </optgroup>
                                             <optgroup label="Stock de 6-10">
                                             <?php
-                                                    $sentencia4 = $base_de_datos->query('SELECT * FROM `productos` WHERE (stock>=6) and (stock<=10);');
+                                                    $sentencia4 = $base_de_datos->query("SELECT * FROM productos WHERE (stock>=6) and (stock<=10) and not item='$menos';");
                                                     $productos4 = $sentencia4->fetchAll(PDO::FETCH_OBJ);
                                                  foreach($productos4 as $producto4){ ?>
 
