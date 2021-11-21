@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/producto.css">
-    
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
     <div class="container">
@@ -78,9 +78,81 @@
                                             <td><?php echo $producto->codigo ?></td>
                                             <td><?php echo $producto->item ?></td>
                                             <td><?php echo $producto->nombre ?></td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                            <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $producto->id ?>">Editar</a><a href="#" type="button" data-open="modalEliminar<?php echo $producto->id ?>">Eliminar</a></td>
                                         </tr>
-                                        
+                                         <!--Modal Editar producto-->
+                                    <div class="modal" id="modal1<?php echo $producto->id ?>" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Editar Datos de Usuario</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                            <p>X</p> 
+                                                </button>
+                                                </header>
+                                                <form class="modal-form" method="POST" action="php/editarProducto.php">
+                                                <section class="modal-content">
+                                                    
+                                                    <!--INICIO DEL Formulario-->
+                                                        <div style="display: none;"><input  type="text" value="<?php echo $producto->id ?>" name="id"  readonly></div>
+                                                            <div><label>Clave</label><input  type="text" value="<?php echo $producto->codigo ?>" name="clave"></div>
+                                                            <div><label>Item</label><input  type="text" value="<?php echo $producto->item ?>" name="item"></div>
+                                                            <?php
+                                                            $sentenci = $base_de_datos->query("SELECT * FROM proveedores WHERE not(nombre='$producto->nombre');");
+                                                            $editProveedores = $sentenci->fetchAll(PDO::FETCH_OBJ); 
+                                                            ?>
+                                                             
+                                                            <div><label>Proveedor</label><select name="proveedor">
+                                                                    
+                                                                    
+                                                                    <?php foreach($editProveedores as $prov){ ?>
+                                                                    <option value="<?php echo $prov->id_proveedor ?>"><?php echo $prov->nombre ?></option>
+                                                                    <?php }?>
+                                                                    </select></div>
+                                                            
+                                                            
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer">
+                                                <button >Guardar</button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal Editar usuario-->
+
+
+                                             <!--Modal Eliminar producto-->
+                                    <div class="modal" id="modalEliminar<?php echo $producto->id ?>" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Eliminar Producto</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                            <p>X</p> 
+                                                </button>
+                                                </header>
+                                                <form class="modal-form" method="POST" action="php/eliminarProducto.php">
+                                                <section class="modal-content">
+                                                    
+                                                    <!--INICIO DEL Formulario-->
+                                                            <div style="display: none;"><input  type="text" value="<?php echo $producto->id ?>" name="id"  readonly></div>
+                                                            <div><label>Clave</label><input  type="text" value="<?php echo $producto->codigo ?>"  readonly></div>
+                                                            <div><label>Item</label><input  type="text" value="<?php echo $producto->item ?>" readonly></div>
+                                                            <div><label>Proveedor</label><input  type="text" value="<?php echo $producto->nombre ?>" readonly></div>
+                                                           
+                                                             
+                                                            
+                                                            
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer">
+                                                <button >Eliminar</button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal Eliminar producto-->
                                    <?php } ?>
                                         <!--No borrar-->
                                         <tr><td></td><td></td><td></td><td></td></tr>
@@ -132,6 +204,6 @@
 
 
     </div>
-    
+    <script src="JS/modal.js"></script>
 </body>
 </html>

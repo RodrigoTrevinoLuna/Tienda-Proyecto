@@ -11,7 +11,7 @@
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
         <link rel="stylesheet" href="css/pedidos.css">
-    
+        <link rel="stylesheet" href="css/modal.css">
         
     
 </head>
@@ -96,8 +96,104 @@
                                                 <td class="P"><?php echo $pedido -> stock?></td>
                                                 <td class="P"><?php echo $pedido -> nombre?></td>
                                                 <td><?php echo $pedido -> pedir?></td>
-                                                <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                                <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $pedido->id_pedido ?>">Editar</a><a href="#" type="button" data-open="modaleliminar<?php echo $pedido->id_pedido ?>">Eliminar</a></td>
                                             </tr>
+
+ <!--Modal Editar usuario-->
+ <div class="modal" id="modal1<?php echo $pedido->id_pedido ?>" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Editar Pedido</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                            <p>X</p> 
+                                                </button>
+                                                </header>
+                                                <form class="modal-form" method="POST" action="php/editarPedido.php">
+                                                
+                                                <section class="modal-content">
+                                                <div><label>Item Anterior</label><input value="<?php echo $pedido -> item?>" readonly></div>
+                                                    <!--INICIO DEL Formulario-->
+                                                    <div><label>Item nuevo:</label><section>:</section>
+                                        <select name="id">
+                                        <option selected="true" disabled="disabled">Seleccione uno</option>
+                                            <optgroup label="Stock en cero">
+                                            
+                                                <?php
+                                                    $menos= $pedido -> item;
+                                                    
+                                                    $sentencia2 = $base_de_datos->query('SELECT * FROM productos WHERE stock=0  AND NOT(item="$menos");');
+                                                    $productos = $sentencia2->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos as $producto){ ?>
+                                                <option value="<?php echo $producto->id ?>"><?php echo $producto->item ?></option>
+                                                <?php } ?>
+                                            </optgroup>
+                                            <optgroup label="Stock de 1-5">
+                                            <?php
+                                                    $sentencia3 = $base_de_datos->query('SELECT * FROM `productos` WHERE (stock>=1) and (stock<=5);');
+                                                    $productos3 = $sentencia3->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos3 as $producto3){ ?>
+                                                <option value="<?php echo $producto3->id ?>"><?php echo $producto3->item ?></option>
+                                                <?php } ?>
+                                            </optgroup>
+                                            <optgroup label="Stock de 6-10">
+                                            <?php
+                                                    $sentencia4 = $base_de_datos->query('SELECT * FROM `productos` WHERE (stock>=6) and (stock<=10);');
+                                                    $productos4 = $sentencia4->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($productos4 as $producto4){ ?>
+
+                                                <option value="<?php echo $producto4->id ?>"><?php echo $producto4->item ?></option>
+                                                <?php } ?>
+                                            </optgroup>
+                                        </select>
+                                                 </div>
+                                                 <div><label>Pedir</label><section>:</section>
+                                        <input type="number"  min="1" value="<?php echo $pedido ->pedir ?>" name="pedir">
+                                    </div>
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer">
+                                                <button >Guardar</button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal Editar usuario-->
+
+<!--Modal ELIMINAR usuario-->
+<div class="modal" id="modaleliminar<?php echo $pedido->id_pedido ?>" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">ELIMINAR Datos de Usuario</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                    <p>X</p>  
+                                                </button>
+                                                </header>
+                                                <form class="modal-form"method="POST" action="php/eliminarPedido.php">
+
+                                                <section class="modal-content">
+                                                    <p>¿Estas seguro que deseas Eliminar este pedido?</p>
+                                                    <!--INICIO DEL Formulario-->
+                                                    
+                                                    <input style="display: none;" value="<?php echo $pedido->id_pedido ?>" name="id">
+                                                            <div><label>Clave</label><input  type="text" value="<?php echo $pedido->codigo ?>" name="id_usuario" readonly></div>
+                                                            <div><label>Nombre</label><input  type="text" value="<?php echo $pedido->item ?>" name="nombre" readonly></div>
+                                                            <div><label>Usuario</label><input  type="text" value="<?php echo $pedido->stock ?>" name="usuario" readonly></div>
+                                                            <div><label>Correo</label><input  type="text" value="<?php echo $pedido->nombre ?>" name="correo" readonly></div>
+                                                            <div><label>Apellido Paterno</label><input type="text" value="<?php echo $pedido->pedir ?>" name="apellidoP" readonly></div>
+                                                            
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer" style="text-align: right;">
+                                                <button style="width: max-content;">Eliminar</button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal ELIMINAR usuario-->  
+
+
                                             <?php } ?>
                                             <!--No borrar-->
                                             <tr><td></td><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
@@ -173,6 +269,6 @@
                 </div>
 
     </div> <!--final DIV container-->
-    
+    <script src="JS/modal.js"></script>
 </body>
 </html>
