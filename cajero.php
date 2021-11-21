@@ -132,7 +132,7 @@
                                         </tr>
                                             <?php } ?>
                                         <!--No borrar-->
-                                        <tr><td></td><td></td><td></td><td></td><td></td><td style="border-right: 1px solid black;"></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td style="border-right: 1px solid black;"></td></tr>
                                     </tbody>
                                 </table>
                         </div>

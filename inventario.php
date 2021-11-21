@@ -51,6 +51,11 @@
                 
                     <!--PANEL PRINCIPAL-->
                     <div class="datos">
+                    <?php
+                                include_once "php/bd.php";
+                                $sentencia = $base_de_datos->query("SELECT * FROM productos,proveedores WHERE (proveedores.id_proveedor = productos.id_proveedor) ;");
+                                $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+                            ?>
                         <section class="input-btn">
                             <input class="input-buscar" type="text" value="Buscar...">
                             <section class="btn-group">
@@ -62,12 +67,8 @@
                                         <tr>
                                             <td class="unidadN">CLAVE</td>
                                             <td class="nameP">ITEM</td>
-                                            <td class="unidadN">UNIDADES INICIALES</td>
                                             <td class="nameProveedor">PROVEEDOR</td>
-                                            <td class="unidadN">ENTRADAS</td>
-                                            <td class="unidadN">SALIDAS</td>
-                                            <td class="unidadN">ENTRADAS SALDOS</td>
-                                            <td class="unidadN">SALIDAS SALDOS</td>
+                                           
                                             <td class="unidadN">STOCK</td>
                                             
 
@@ -75,41 +76,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach($productos as $producto){ ?>
                                         <tr>
-                                            <td class="C">A-1</td>
-                                            <td class="P">Frijol 1kg Doña Lucha</td>
-                                            <td>0.00</td>
-                                            <td>Mercado</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <?php 
+                                                
+
+                                            ?>
+                                            <td class="C"><?php echo $producto->codigo?></td>
+                                            <td class="P"><?php echo $producto->item?></td>
+                                            <td><?php echo $producto->nombre?></td>
+                                            <td><?php echo $producto->stock?></td>
+                                          
                                             
                                             
                                         </tr>
+                                        <?php } ?>
                                         <tr>
-                                            <td class="C">A-2</td>
-                                            <td class="P">Huevo 1kg Bachoco</td>
-                                            <td>0.00</td>
-                                            <td>Soriana</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="C"></td>
+                                            <td class="P"></td>
                                             <td></td>
                                             
-                                        </tr>
-                                        <tr>
-                                            <td class="C">A-3</td>
-                                            <td class="P">Arroz 1kg Bachoco</td>
-                                            <td>6.00</td>
-                                            <td>Soriana</td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            
                                             
                                         </tr>
                                     </tbody>

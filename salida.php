@@ -65,7 +65,7 @@
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->
                             <h1 class="titulo-pedidos">Salidas de Mercancias</h1>
                             <br>
-                            <div class="filtro">
+                            <div class="filtro" style="position:relative; right:200px" >
                                 <div><label>Fecha:</label><input type="date"></div>
                                 <div><label>Buscar:</label><input type="text"></div>
                             </div>
@@ -75,61 +75,30 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <td class="nameP">CLAVE</td>
+                                            <td class="nameP">ID VENTA</td>
                                             <td class="unidadI">ITEM</td>
                                             <td class="unidadI">PROVEEDOR</td>
                                             <td class="unidadN">PRECIO UN.</td>
                                             <td class="unidadN">UNIDADES SALIENTES</td>
                                             <td class="unidadN">IMPORTE</td>
-                                            <td class="UnidadN">ACCION</td>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php include_once "php/bd.php";
+                                                    $sentencia9 = $base_de_datos->query("SELECT * FROM productos,productos_vendidos,proveedores WHERE ((productos.id = productos_vendidos.id_producto) and (productos.id_proveedor = proveedores.id_proveedor))" );
+                                                    $salidas = $sentencia9->fetchAll(PDO::FETCH_OBJ);
+                                                 foreach($salidas as $salida){ ?>
                                         <tr class="fila">
-                                            <td>A-1</td>
-                                            <td class="P">Producto 1</td>
-                                            <td class="P">Proveedor 1</td>
+                                            <td></td>
+                                            <td class="P"><?php echo $salida ->item?></td>
+                                            <td class="P"><?php echo $salida ->nombre?></td>
+                                            <td><?php echo $salida ->precioVenta?></td>
+                                            <td><?php echo $salida ->cantidad?></td>
                                             <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                            
                                         </tr>
-                                        <tr class="fila">
-                                            <td>A-2</td>
-                                            <td class="p">Producto 2</td>
-                                            <td class="p">Proveedor 2</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td>A-2</td>
-                                            <td class="p">Producto 2</td>
-                                            <td class="p">Proveedor 2</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td>A-2</td>
-                                            <td class="p">Producto 2</td>
-                                            <td class="p">Proveedor 2</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
-                                        <tr class="fila">
-                                            <td>A-2</td>
-                                            <td class="p">Producto 2</td>
-                                            <td class="p">Proveedor 2</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
 
