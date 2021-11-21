@@ -43,7 +43,7 @@
                    
                     <hr style="background-color: white;">
                     <hr style="background-color: white;">
-                    <button type="submit" class="col btn btn-danger p-2"><a href="cajero.html"> Aceptar</a></button>
+                    <button type="submit" class="col btn btn-danger p-2"><a href="cajero.php"> Aceptar</a></button>
                    
                 </form>
              

@@ -23,7 +23,7 @@
          <!-- INICIO MENUBAR-->
                         <div class="menuBar">
                                         
-                            <ul class="principal">
+                            <ul class="principal" >
                                 <!--Ventas-->
                                 <a href="cajero.php"><img src="imagenes/iconos/caja-registradora.png"><P>Caja</P></a>
                                 <a href="puntoVenta.php"><img src="imagenes/iconos/Punto-de-Venta.png"><P>Punto de Venta</P></a>
