@@ -105,7 +105,7 @@
                                             <td >CLAVE</td>    
                                             <td class="nameP">PRODUCTO</td>
                                             <td class="unidadN">PRECIO UNIT</td>
-                                            <td class="unidadN">DESCTO</td>
+                                            
                                             <td class="unidadN">CANT</td>
                                             <td class="unidadT">IMPORTE</td>
                                             <td id="contenido">ACCIÓN</td>
@@ -124,7 +124,7 @@
                                             <td><?php echo $producto->codigo?></td>
                                             <td class="P"><?php echo $producto->item?></td>
                                             <td><?php echo $producto->precioVenta?></td>
-                                            <td>descuentos </td>
+                                            
                                             <td><?php echo $producto->cantidad?></td>
                                             <td><?php echo $producto->total?></td>
                                             <td id="contenido"><a href="<?php echo "php/quitarDelCarrito.php?indice=" . $indice?>" >Quitar</a></td>
@@ -175,7 +175,7 @@
         </button>
         
         
-       <img  class="logo" src="imagenes/logo.jpg">
+       <img  class="logo" src="imagenes/logo-tienda.png">
     </div>            
                     </div>
                     

@@ -54,7 +54,7 @@
                         <section class="input-btn">
                             <input class="input-buscar" type="text" value="Buscar...">
                             <section class="btn-group">
-                                <button class="btn-imprimir">Imprimir</button>
+                                <a href="php/Imprimir/ImprimirInventario.php"><button class="btn-imprimir">Imprimir</button></a>
                             </section>
                         </section>   
                        <table class="table-inventario">
