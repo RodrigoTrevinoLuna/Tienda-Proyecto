@@ -12,6 +12,7 @@
     <!-- Crear Estilos Ventana nueva con el nombre del archivo html (nameArchivoHtml.css)
         ejemplo-->
         <link rel="stylesheet" href="css/puntoVenta.css">
+        <link rel="stylesheet" href="css/modal.css">
     
 </head>
 <body>
@@ -95,8 +96,39 @@
                                             <td class="P"><?php echo $producto->item ?></td>
                                             <td ><?php echo $producto->precioVenta ?></td>
                                             
-                                            <td class="accion"><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                            <td class="accion"><a href="#"  type="button" data-open="modal1<?php echo $producto->id ?>">Editar</a></td>
                                         </tr>
+                                        <!--Modal Editar usuario-->
+                                    <div class="modal" id="modal1<?php echo $producto->id ?>" data-animation="slideInOutLeft">
+                                            <div class="modal-dialog">
+                                                
+                                                <header class="modal-header">
+                                                    <h3 style="text-align: center; width: 100%;">Editar Precios</h3>
+                                                
+                                                <button class="close-modal btn-modal" aria-label="close modal" data-close>
+                                                            <p>X</p> 
+                                                </button>
+                                                </header>
+                                                <form class="modal-form" method="POST" action="php/editPreciosVenta.php">
+                                                <section class="modal-content">
+                                                    
+                                                    <!--INICIO DEL Formulario-->
+                                                            <input  type="text" value="<?php echo $producto->id ?>" name="id" style="visibility:hidden" >
+                                                            <div><label>Clave</label><input  type="text" value="<?php echo $producto->codigo?>" name="nombre" readonly></div>
+                                                            <div><label>Item</label><input  type="text" value="<?php echo $producto->item ?>"  readonly></div>
+                                                            <div><label>Precio Venta</label><input  type="number" min="1" value="<?php echo $producto->precioVenta ?>" name="precioVenta"></div>
+                                                            
+                                                            
+                                                    <!--Fin del Formulario-->
+                                                </section>
+                                                <footer class="modal-footer">
+                                                <button >Guardar</button>
+                                                </footer>
+                                                </form>
+                                            </div>
+                                            </div><!-- FIN DELModal Editar usuario-->
+
+                                            
                                         <?php } ?>
                                         <!--No borrar-->
                                         <tr><td></td><td></td><td></td></td><td class="accion"></td></tr>
@@ -118,7 +150,7 @@
                                     <optgroup label="Sin Precio Venta">
                                     <option selected="true" disabled="disabled">Seleccione uno</option>
                                     <?php 
-                                     $sentenciaA = $base_de_datos->query("SELECT * FROM productos WHERE  precioVenta=0");
+                                     $sentenciaA = $base_de_datos->query("SELECT * FROM productos WHERE  precioVenta=0 AND stock>0");
                                      $productosA = $sentenciaA->fetchAll(PDO::FETCH_OBJ);
                                     foreach($productosA as $productoA){ 
                                         ?>
@@ -136,7 +168,7 @@
                         
                             <div>
                                 <label>PrecioVenta</label><section>:</section>
-                                <input type="number" name="venta">
+                                <input type="number" name="venta" min="1">
                             </div>
                             
                             <hr>
@@ -154,6 +186,8 @@
 
     </div> <!--final DIV container-->
     
+    
+    <script src="JS/modal.js"></script>
 </body>
 </html>
 
