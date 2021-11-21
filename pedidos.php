@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+ if(!isset($_SESSION["permiso"])){
+    header("Location: index.php?status=1");
+ }else if($_SESSION["permiso"] != "Administrador"){
+    header("Location: cajero.php?status=10");
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +37,7 @@
                                 <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                                 <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                                 <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                
                                 <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
@@ -37,11 +45,10 @@
                                 <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                              
                             </ul>
                             <ul class="secundario">
-                            <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                            <a href="php/cerrarSesion.php"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                             </ul>
                     
                 </div>

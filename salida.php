@@ -1,10 +1,21 @@
+<?php 
+    session_start();
+ if(!isset($_SESSION["permiso"])){
+    header("Location: index.php?status=1");
+ }
+?>
+<?php
+include_once "php/bd.php";
+$sentencia = $base_de_datos->query("SELECT ventas.total, ventas.fecha, ventas.id, GROUP_CONCAT(	productos.codigo, '..',  productos.item, '..', productos_vendidos.cantidad SEPARATOR '__') AS productos FROM ventas INNER JOIN productos_vendidos ON productos_vendidos.id_venta = ventas.id INNER JOIN productos ON productos.id = productos_vendidos.id_producto GROUP BY ventas.id ;");
+$ventas = $sentencia->fetchAll(PDO::FETCH_OBJ);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Salidas</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
 
@@ -28,7 +39,7 @@
                            <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                            <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                            <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                           <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                           
                            <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                            <hr>
                            <!---->
@@ -36,11 +47,10 @@
                            <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                            <hr>
                            <!---->
-                           <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                           <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                           
                             </ul>
                             <ul class="secundario">
-                            <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                            <a href="php/cerrarSesion.php"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                             </ul>
                     
                 </div>
@@ -66,43 +76,55 @@
                             <h1 class="titulo-pedidos">Salidas de Mercancias</h1>
                             <br>
                             <div class="filtro" style="position:relative; right:200px" >
-                                <div><label>Fecha:</label><input type="date"></div>
+                                
                                 <div><label>Buscar:</label><input type="text"></div>
                             </div>
                             
-                            <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
+                            
                                 
-                                <table>
+                                <table style="width:100%">
                                     <thead>
                                         <tr>
                                             <td class="nameP">ID VENTA</td>
-                                            <td class="unidadI">ITEM</td>
-                                            <td class="unidadI">PROVEEDOR</td>
-                                            <td class="unidadN">PRECIO UN.</td>
-                                            <td class="unidadN">UNIDADES SALIENTES</td>
-                                            <td class="unidadN">IMPORTE</td>
-                                            
+                                            <td class="unidadI">FECHA</td>
+                                            <td class="unidadI">PRODUCTOS VENDIDOS</td>
+                                            <td class="unidadN">TOTAL</td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php include_once "php/bd.php";
-                                                    $sentencia9 = $base_de_datos->query("SELECT * FROM productos,productos_vendidos,proveedores WHERE ((productos.id = productos_vendidos.id_producto) and (productos.id_proveedor = proveedores.id_proveedor))" );
-                                                    $salidas = $sentencia9->fetchAll(PDO::FETCH_OBJ);
-                                                 foreach($salidas as $salida){ ?>
+                                    <?php foreach($ventas as $venta){ ?>
                                         <tr class="fila">
-                                            <td></td>
-                                            <td class="P"><?php echo $salida ->item?></td>
-                                            <td class="P"><?php echo $salida ->nombre?></td>
-                                            <td><?php echo $salida ->precioVenta?></td>
-                                            <td><?php echo $salida ->cantidad?></td>
-                                            <td>0.00</td>
-                                            
+                                            <td><?php echo $venta->id ?></td>
+					                        <td><?php echo $venta->fecha ?></td>
+                                            <td>
+                                                <table style="width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>CLAVE</th>
+                                                            <th style="width: 100%;">ITEM</th>
+                                                            <th>CANTIDAD</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <?php foreach(explode("__", $venta->productos) as $productosConcatenados){ 
+                                                            $producto = explode("..", $productosConcatenados)
+                                                            ?>
+                                                        <tr>
+                                                            <td><?php echo $producto[0] ?></td>
+                                                            <td><?php echo $producto[1] ?></td>
+                                                            <td><?php echo $producto[2] ?></td>
+                                                        </tr>
+                                                            <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td><?php echo $venta->total ?></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
 
-                            </div>
+                            
                         </div><!--Cierre de div datos-->
                     </div>
                     
@@ -113,3 +135,4 @@
     
 </body>
 </html>
+

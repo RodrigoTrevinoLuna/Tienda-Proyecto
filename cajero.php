@@ -1,6 +1,11 @@
 <?php session_start();
+if(!isset($_SESSION["permiso"])){
+    
+    header("Location: index.php?status=1");
+}
     if(!isset($_SESSION["carrito"])) $_SESSION["carrito"] = [];
     $granTotal = 0;
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,9 +17,14 @@
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/cajero.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/status.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+
+
+		
+
     <div class="container">
         <!-- INICIO MENUBAR-->
                        <div class="menuBar">
@@ -28,7 +38,7 @@
                                 <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                                 <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                                 <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                
                                 <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
@@ -37,12 +47,11 @@
                                 <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                                
                                 
                            </ul>
                            <ul class="secundario">
-                           <a href="#"> <img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                           <a href="php/cerrarSesion.php"> <img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                            </ul>
                    
                </div>
@@ -60,38 +69,42 @@
                                         if(isset($_GET["status"])){
                                             if($_GET["status"] === "1"){
                                                 ?>
-                                                    <div class="alert alert-success">
-                                                        <strong>¡Correcto!</strong> Venta realizada correctamente
+                                                    <div class="alerta-container">
+                                                        <div class="alert-success">
+                                                        <strong>¡Genial!</strong> Venta Realizada Correctamente
+                                                        </div>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "2"){
                                                 ?>
-                                                <div class="alert alert-info">
-                                                        <strong>Venta cancelada</strong>
+                                                <div class=" alert-info">
+                                                        <strong>Venta Cancelada</strong>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "3"){
                                                 ?>
-                                                <div class="alert alert-info">
-                                                        <strong>Ok</strong> Producto quitado de la lista
+                                                <div class="alerta-container">
+                                                        <div class=" alert-info">
+                                                         Producto eliminado de la lista
+                                                         </div>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "4"){
                                                 ?>
-                                                <div class="alert alert-warning">
-                                                        <strong>Error:</strong> El producto que buscas no existe
+                                                <div class=" alert-warning">
+                                                        <strong>Error:</strong> El producto NO existe
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "5"){
                                                 ?>
-                                                <div class="alert alert-danger">
+                                                <div class=" alert-info">
                                                         <strong>Error: </strong>El producto está agotado
                                                     </div>
                                                 <?php
-                                            }else{
+                                            }else if($_GET["status"] === "10"){
                                                 ?>
-                                                <div class="alert alert-danger">
-                                                        <strong>Error:</strong> Algo salió mal mientras se realizaba la venta
+                                                <div class=" alert-warning">
+                                                        <strong>Acceso no autorizado:</strong> Solo Administrador
                                                     </div>
                                                 <?php
                                             }
@@ -150,23 +163,19 @@
     
     
     <div class="opciones">
-        <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
-            <img src="imagenes/cobrar.png">
-            <p>[1] Cobrar</p>
-        </button>
         
-        <button class="btn-opcion">
-            <img src="imagenes/retiro.png">
-            <p>[2] Retiro</p>
-            
-        </button>
+        
+        
 
         <button class="btn-opcion" type="button" data-open="modalBuscar" accesskey="3">
             <img src="imagenes/buscar.png">
             <p>[3] Buscar</p>
         </button>
 
-    
+        <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
+            <img src="imagenes/cobrar.png">
+            <p>[1] Cobrar</p>
+        </button>
 
         <button accesskey="6" class="btn-opcion" role="link" onclick="window.location='php/cancelarVenta.php'" >
             <img src="imagenes/cancelar-venta.png">
@@ -176,6 +185,7 @@
         
         
        <img  class="logo" src="imagenes/logo-tienda.png">
+     
     </div>            
                     </div>
                     

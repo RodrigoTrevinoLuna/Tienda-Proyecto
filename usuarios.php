@@ -1,10 +1,18 @@
+<?php 
+    session_start();
+ if(!isset($_SESSION["permiso"])){
+    header("Location: index.php?status=1");
+ }else if($_SESSION["permiso"] != "Administrador"){
+    header("Location: cajero.php?status=10");
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Usuarios</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
 
@@ -15,6 +23,7 @@
     
         <link rel="stylesheet" href="css/Usuarios.css">
         <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/status.css">
        
         
 </head>
@@ -32,7 +41,7 @@
                                 <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                                 <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                                 <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                
                                 <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
@@ -40,11 +49,10 @@
                                 <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                               
                             </ul>
                             <ul class="secundario">
-                            <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                            <a href="php/cerrarSesion.php"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                             </ul>
                     
                 </div>
@@ -65,28 +73,44 @@
                         <div class="div-titulo">
                             <h2 class="titulo">Usuarios</h2>
                         </div>
+                       
                             <form method="post" action="php/registroUsuario.php">
                                 <div class="form-registro">
                                     <h2>Registro de Usuarios</h2>
                                 </div>
+                                <?php 
+                                        if(isset($_GET["status"])){
+                                            if($_GET["status"]=== "9"){ ?>
+                                                <div class="alerta-container">
+                                                        <div class="alert-warning">
+                                                        <strong>¡Alerta!</strong> Ya existe este Usuario
+                                                        </div>
+                                                    </div>    
+                                            <?php } else if($_GET["status"]==="8"){ ?>
+                                                         <div class="alerta-container">
+                                                         <div class="alert-success">
+                                                         <strong>¡Genial!</strong> Se Guardaron Correctamente los datos
+                                                         </div>
+                                                     </div>  
+                                            <?php }} ?>
                                 <div class="form">
                                         <div class="seccion1">
                                             
-                                            <div><label>Nombre<input  type="text" placeholder="Ingrese su Nombre" name="nombre"></label></div>
-                                            <div><label>Usuario<input  type="text" placeholder="Ingrese su Correo" name="usuario"></label></div>
-                                                <div><label>Correo<input  type="text" placeholder="Ingrese su Nombre" name="correo"></label></div>
+                                            <div><label>Nombre<input required  type="text" placeholder="Ingrese su Nombre" name="nombre"></label></div>
+                                            <div><label>Usuario<input required  type="text" placeholder="Ingrese su Correo" name="usuario"></label></div>
+                                                <div><label>Correo<input required  type="text" placeholder="Ingrese su Nombre" name="correo"></label></div>
                                         </div>
                                         <div class="seccion2" >
                                                 
-                                            <div><label>Apellido Paterno<input type="text" placeholder="Ingrese su Apellido" name="apellidoP"></label></div>
-                                            <div><label>Contraseña<input type="text" placeholder="Ingrese contraseña" name="password"></label></div>
-                                                <div><label>Telefono<input type="text" placeholder="Ingrese Telefono" name="tel"></label></div>
+                                            <div><label>Apellido Paterno<input required type="text" placeholder="Ingrese su Apellido" name="apellidoP"></label></div>
+                                            <div><label>Contraseña<input required type="text" placeholder="Ingrese contraseña" name="password"></label></div>
+                                                <div><label>Telefono<input required type="text" placeholder="Ingrese Telefono" name="tel"></label></div>
                                             
                                         </div>
                                         <div class="seccion3" >
-                                            <label>Apellido Materno<input type="text" placeholder="Ingrese su Apellido" name="apellidoM"></label>
-                                            <label>Direccion<input type="text" placeholder="Ingrese su Direccion" name="direccion"></label>
-                                            <label>Nivel de Acceso<select name="nivelacceso">
+                                            <label>Apellido Materno<input required type="text" placeholder="Ingrese su Apellido" name="apellidoM"></label>
+                                            <label>Direccion<input required type="text" placeholder="Ingrese su Direccion" name="direccion"></label>
+                                            <label>Nivel de Acceso<select name="nivelacceso" required>
                                                 <option selected="true" disabled="disabled">Seleccione uno</option>
                                                 <option value="Empleado">Empleado</option>
                                                 <option value="Administrador">Administrador</option>
