@@ -59,7 +59,7 @@
                         <section class="input-btn">
                             <input class="input-buscar" type="text" value="Buscar...">
                             <section class="btn-group">
-                                <a href="php/Imprimir/ImprimirInventario.php"><button class="btn-imprimir">Imprimir</button></a>
+                                <a href="php/Imprimir/ImprimirInventario.php" target="_blank"><button class="btn-imprimir">Imprimir</button></a>
                             </section>
                         </section>   
                        <table class="table-inventario">
