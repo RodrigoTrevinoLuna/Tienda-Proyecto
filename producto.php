@@ -53,7 +53,7 @@
                         <h2 class="titulo"> Productos</h2>
                         <div class="a">
                             <div>
-                                <a href="php/Imprimir/ImprimirProductos.php"><button class="btn-imprimir">Imprimir</button></a>
+                                <a href="php/Imprimir/ImprimirProductos.php" target="_blank"><button class="btn-imprimir">Imprimir</button></a>
                             </div>
                         </div>
                             <!--PANEL IZQUIERDO-->
