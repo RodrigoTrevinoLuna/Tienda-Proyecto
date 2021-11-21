@@ -35,7 +35,7 @@ $pdf->Addpage();
 
 $pdf->SetFillColor(232,232,232);
 $pdf->SetFont('Arial', 'B','10');
-$pdf->Cell(20);
+$pdf->Cell(15);
 $pdf->Cell(20, 10,'Clave', 1, 0,'C',1);
 $pdf->Cell(40, 10,'Item', 1, 0,'C',1);
 $pdf->Cell(40, 10,'Proveedor', 1, 0,'C',1);
@@ -47,7 +47,7 @@ $sentencia = $base_de_datos->query("SELECT * FROM productos,proveedores WHERE pr
 $productos = $sentencia->fetchAll(PDO::FETCH_OBJ); 
 foreach($productos as $producto){ 
 
-$pdf->Cell(20);
+$pdf->Cell(15);
 $pdf->Cell(20, 7,$producto->codigo, 1, 0,'C');
 $pdf->Cell(40, 7,$producto->item, 1, 0,'C');
 $pdf->Cell(40, 7,$producto->nombre, 1, 0,'C');
