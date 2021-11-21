@@ -28,7 +28,7 @@
                                 <a href="inventario.php"><img src="imagenes/iconos/inventario.png"><P>Inventario</P></a>
                                 <a href="producto.php"><img src="imagenes/iconos/producto.png"><P>Producto</P></a>
                                 <a href="pedidos.php"><img src="imagenes/iconos/pedidos.png"><P>Pedidos</P></a>
-                                <a href="entrada.php"><img src="imagenes/iconos/entrada.png"><P>Entradas</P></a>
+                                
                                 <a href="salida.php"><img src="imagenes/iconos/salida.png"><P>Salidas</P></a>
                                 <hr>
                                 <!---->
@@ -37,8 +37,7 @@
                                 <a href="proveedores.php"><img src="imagenes/iconos/Proveedor.png"><P>Proveedores</P></a>
                                 <hr>
                                 <!---->
-                                <a href="ventas.php"><img src="imagenes/iconos/ventas.png"><P>Ventas</P></a>
-                                <a href="gastos.php"><img src="imagenes/iconos/gastos.png"><P>Gastos</P></a>
+                                
                                 
                            </ul>
                            <ul class="secundario">
@@ -150,23 +149,19 @@
     
     
     <div class="opciones">
-        <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
-            <img src="imagenes/cobrar.png">
-            <p>[1] Cobrar</p>
-        </button>
         
-        <button class="btn-opcion">
-            <img src="imagenes/retiro.png">
-            <p>[2] Retiro</p>
-            
-        </button>
+        
+        
 
         <button class="btn-opcion" type="button" data-open="modalBuscar" accesskey="3">
             <img src="imagenes/buscar.png">
             <p>[3] Buscar</p>
         </button>
 
-    
+        <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
+            <img src="imagenes/cobrar.png">
+            <p>[1] Cobrar</p>
+        </button>
 
         <button accesskey="6" class="btn-opcion" role="link" onclick="window.location='php/cancelarVenta.php'" >
             <img src="imagenes/cancelar-venta.png">
