@@ -270,6 +270,7 @@
                                                     <!--Fin del Formulario-->
                                                 </section>
                                                 <footer class="modal-footer">
+                                                    <!--<button>Imprimir Ticket</button>-->
                                                     <button>Terminar Venta </button>
                                                 </footer>
                                                 </form>
