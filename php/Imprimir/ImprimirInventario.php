@@ -38,8 +38,8 @@ $pdf->SetFont('Arial', 'B','10');
 $pdf->Cell(20);
 $pdf->Cell(20, 10,'Clave', 1, 0,'C',1);
 $pdf->Cell(40, 10,'Item', 1, 0,'C',1);
-$pdf->Cell(25, 10,'Unidades In.', 1, 0,'C',1);
-$pdf->Cell(35, 10,'Proveedor', 1, 0,'C',1);
+$pdf->Cell(25, 10,'Proveedor', 1, 0,'C',1);
+$pdf->Cell(35, 10,'Stock', 1, 0,'C',1);
 $pdf->Cell(30, 10,'Precio Compra', 1, 1,'C',1);
 
 
@@ -51,7 +51,7 @@ $pdf->Cell(20);
 $pdf->Cell(20, 7,$producto->codigo, 1, 0,'C');
 $pdf->Cell(40, 7,$producto->item, 1, 0,'C');
 $pdf->Cell(25, 7,$producto->nombre, 1, 0,'C');
-$pdf->Cell(35, 7,$producto->precioCompra, 1, 0,'C');
+$pdf->Cell(35, 7,$producto->stock, 1, 0,'C');
 $pdf->Cell(30, 7,$producto->precioVenta, 1, 1,'C');
 
 }
