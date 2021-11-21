@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/producto.css">
     <link rel="stylesheet" href="css/modal.css">
+
 </head>
 <body>
     <div class="container">
@@ -52,7 +53,7 @@
                         <h2 class="titulo"> Productos</h2>
                         <div class="a">
                             <div>
-                                <button class="btn-imprimir">Imprimir</button>
+                                <a href="php/Imprimir/ImprimirProductos.php"><button class="btn-imprimir">Imprimir</button></a>
                             </div>
                         </div>
                             <!--PANEL IZQUIERDO-->

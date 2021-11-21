@@ -175,7 +175,7 @@
         </button>
         
         
-       <img  class="logo" src="imagenes/logo.jpg">
+       <img  class="logo" src="imagenes/logo-tienda.png">
     </div>            
                     </div>
                     
