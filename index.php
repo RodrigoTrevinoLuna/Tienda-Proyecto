@@ -28,13 +28,30 @@
                 <br>
                 
                 <br>
+                <?php
+                                        if(isset($_GET["status"])){
+                                            if($_GET["status"] === "1"){
+                                                ?>
+                                                    <div class="alerta-container">
+                                                        <div class="alert-danger">
+                                                        <strong>Alerta</strong> Primero Inicia Sesión
+                                                        </div>
+                                                    </div>
+                                           <?php } if($_GET["status"] === "2"){
+                                              ?>
+                                                    <div class="alerta-container">
+                                                        <div class="alert-danger">
+                                                        <strong>Alerta</strong> Datos Incorrectos
+                                                        </div>
+                                                    </div>
+                                           <?php } }?>
                     <h1 class="text-light text-center" id="a">Inicio Sesión</h1>
                     
                     <hr style="background-color: white;">
                     <hr style="background-color: white;">
                     
                     
-                <form action="php/vInicioS.php" method="POST" class="p-2" >
+                <form action="php/login.php" method="POST" class="p-2" >
                     <label class="p-1 text-light col"><h4>Usuario</h4><input type="text" class="col" name="usuario" id="txtUsuario" required></label>
                     <br><br>
                     <label class="p-1 text-light col"><h4>Password</h4><input type="password" class="col bn-3" name="password" id="txtPassword" required></label>
@@ -43,7 +60,7 @@
                    
                     <hr style="background-color: white;">
                     <hr style="background-color: white;">
-                    <button type="submit" class="col btn btn-danger p-2"><a href="cajero.php"> Aceptar</a></button>
+                    <button type="submit" class="col btn btn-danger p-2"> Aceptar</button>
                    
                 </form>
              

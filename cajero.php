@@ -1,6 +1,11 @@
 <?php session_start();
+if(!isset($_SESSION["permiso"])){
+    
+    header("Location: index.php?status=1");
+}
     if(!isset($_SESSION["carrito"])) $_SESSION["carrito"] = [];
     $granTotal = 0;
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,9 +17,14 @@
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/cajero.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/status.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+
+
+		
+
     <div class="container">
         <!-- INICIO MENUBAR-->
                        <div class="menuBar">
@@ -41,7 +51,7 @@
                                 
                            </ul>
                            <ul class="secundario">
-                           <a href="#"> <img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                           <a href="php/cerrarSesion.php"> <img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                            </ul>
                    
                </div>
@@ -59,38 +69,42 @@
                                         if(isset($_GET["status"])){
                                             if($_GET["status"] === "1"){
                                                 ?>
-                                                    <div class="alert alert-success">
-                                                        <strong>¡Correcto!</strong> Venta realizada correctamente
+                                                    <div class="alerta-container">
+                                                        <div class="alert-success">
+                                                        <strong>¡Genial!</strong> Venta Realizada Correctamente
+                                                        </div>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "2"){
                                                 ?>
-                                                <div class="alert alert-info">
-                                                        <strong>Venta cancelada</strong>
+                                                <div class=" alert-info">
+                                                        <strong>Venta Cancelada</strong>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "3"){
                                                 ?>
-                                                <div class="alert alert-info">
-                                                        <strong>Ok</strong> Producto quitado de la lista
+                                                <div class="alerta-container">
+                                                        <div class=" alert-info">
+                                                         Producto eliminado de la lista
+                                                         </div>
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "4"){
                                                 ?>
-                                                <div class="alert alert-warning">
-                                                        <strong>Error:</strong> El producto que buscas no existe
+                                                <div class=" alert-warning">
+                                                        <strong>Error:</strong> El producto NO existe
                                                     </div>
                                                 <?php
                                             }else if($_GET["status"] === "5"){
                                                 ?>
-                                                <div class="alert alert-danger">
+                                                <div class=" alert-info">
                                                         <strong>Error: </strong>El producto está agotado
                                                     </div>
                                                 <?php
-                                            }else{
+                                            }else if($_GET["status"] === "10"){
                                                 ?>
-                                                <div class="alert alert-danger">
-                                                        <strong>Error:</strong> Algo salió mal mientras se realizaba la venta
+                                                <div class=" alert-warning">
+                                                        <strong>Acceso no autorizado:</strong> Solo Administrador
                                                     </div>
                                                 <?php
                                             }
@@ -171,6 +185,7 @@
         
         
        <img  class="logo" src="imagenes/logo-tienda.png">
+     
     </div>            
                     </div>
                     

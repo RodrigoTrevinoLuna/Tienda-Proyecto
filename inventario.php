@@ -1,10 +1,19 @@
+<?php 
+    session_start();
+ if(!isset($_SESSION["permiso"])){
+    header("Location: index.php?status=1");
+ }else if($_SESSION["permiso"] != "Administrador"){
+    header("Location: cajero.php?status=10");
+ }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entradas</title>
+    <title>Inventario</title>
     <!-- Importar estilos de la plantilla-->
     <link rel="stylesheet" href="css/contenido.css">
 
@@ -38,7 +47,7 @@
                                
                             </ul>
                             <ul class="secundario">
-                            <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                            <a href="php/cerrarSesion.php"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                             </ul>
                     
                 </div>
@@ -57,7 +66,7 @@
                     <div class="columna-1" >
                         <!--Etiqueta para agregar el titulo No mover-->
                         <div class="div-titulo">
-                            <h2 class="titulo"> Entradas</h2>
+                            <h2 class="titulo"> Inventario</h2>
                         </div>
                         <div class="datos">
                             <!--Apartir de aqui abajo ya puedes escribir codigo -->

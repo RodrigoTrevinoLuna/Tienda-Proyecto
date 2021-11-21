@@ -64,10 +64,7 @@ thead>tr>td{
     height: 65%;
     
 }
-tbody>.fila:hover{
-    background: rgba(128, 128, 128, 0.37);
-    color: white;
- }
+
 .fila{
     height: 20px;
     width: 100%;

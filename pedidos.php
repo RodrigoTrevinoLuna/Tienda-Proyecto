@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+ if(!isset($_SESSION["permiso"])){
+    header("Location: index.php?status=1");
+ }else if($_SESSION["permiso"] != "Administrador"){
+    header("Location: cajero.php?status=10");
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,7 +48,7 @@
                               
                             </ul>
                             <ul class="secundario">
-                            <a href="#"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
+                            <a href="php/cerrarSesion.php"><img src="imagenes/iconos/salida.png"><P>Cerrar sesión</P></a>
                             </ul>
                     
                 </div>
