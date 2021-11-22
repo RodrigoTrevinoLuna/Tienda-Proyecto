@@ -77,12 +77,10 @@ $ventas = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <br>
                             <div class="filtro" style="position:relative; right:200px" >
                                 
-                                <div><label>Buscar:</label><input type="text"></div>
+                                <div><label class="text-light">Buscar:</label><input type="text" id="search"></div>
                             </div>
                             
-                            
-                                
-                                <table style="width:100%">
+                                <table style="width:100%" id="mytable">
                                     <thead>
                                         <tr>
                                             <td class="nameP">ID VENTA</td>
@@ -132,7 +130,23 @@ $ventas = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 </div>
 
     </div> <!--final DIV container-->
-    
+    <script>
+         // Write on keyup event of keyword input element
+         $(document).ready(function(){
+        $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#mytable tbody tr"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+        $(this).hide();
+        
+        else
+        $(this).show();
+        
+        });
+        });
+        });
+    </script>
 </body>
 </html>
 

@@ -103,7 +103,7 @@
                                         <div class="seccion2" >
                                                 
                                             <div><label>Apellido Paterno<input required type="text" placeholder="Ingrese su Apellido" name="apellidoP"></label></div>
-                                            <div><label>Contraseña<input required type="text" placeholder="Ingrese contraseña" name="password"></label></div>
+                                            <div><label>Contraseña<input required type="password" placeholder="Ingrese contraseña" name="password"></label></div>
                                                 <div><label>Telefono<input required type="text" placeholder="Ingrese Telefono" name="tel"></label></div>
                                             
                                         </div>

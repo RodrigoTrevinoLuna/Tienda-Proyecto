@@ -94,7 +94,7 @@
                                             <div class="modal-dialog">
                                                 
                                                 <header class="modal-header">
-                                                    <h3 style="text-align: center; width: 100%;">Editar Datos de Usuario</h3>
+                                                    <h3 style="text-align: center; width: 100%;">Editar Datos del Producto</h3>
                                                 
                                                 <button class="close-modal btn-modal" aria-label="close modal" data-close>
                                                             <p>X</p> 

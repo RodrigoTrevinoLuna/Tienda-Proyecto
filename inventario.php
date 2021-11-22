@@ -74,15 +74,13 @@
                                <br>
                                <div class="filtro">
                                
-                                   <div><label>Buscar:</label><input type="text"></div>
+                                   <div><label class="text-light">Buscar:</label><input type="text" id="search"></div>
                                    <div><a href="php/Imprimir/ImprimirInventario.php" target="_blank"><button class="btn-imprimir">Imprimir</button></a></div>
                                </div>
 
-                               
-
                                <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
                                 
-                                <table >
+                                <table id="mytable">
                                     <thead>
                                         <tr>
                                             <td class="nameP">CLAVE</td>
@@ -90,8 +88,6 @@
                                             <td class="unidadI">PROVEEDOR</td>
                                             <td class="unidadN">IMPORTE</td>
                                             <td class="unidadN">UNIDADES Stock</td>
-                                            
-                                            
                                             
                                         </tr>
                                     </thead>
@@ -172,6 +168,22 @@
                 </div>
 
     </div> <!--final DIV container-->
-    
+    <script>
+         // Write on keyup event of keyword input element
+        $(document).ready(function(){
+        $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#mytable tbody tr"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+        $(this).hide();
+        
+        else
+        $(this).show();
+        
+        });
+        });
+        });
+    </script>
 </body>
 </html>
