@@ -134,7 +134,7 @@
                                             <td><?php echo $proveedor->rfc?></td>
                                             <td><?php echo $proveedor->correo?></td>
                                             <td><?php echo $proveedor->telefono?></td>
-                                            <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $proveedor->id_proveedor ?>">Editar</a><a href="#" type="button" data-open="modaleliminar<?php echo $proveedor->id_proveedor ?>">Eliminar</a></td>                                           
+                                            <td class="accion" ><a href="#" style="text-decoration:none" type="button" data-open="modal1<?php echo $proveedor->id_proveedor ?>">Editar</a><a href="#" style="text-decoration:none" type="button" data-open="modaleliminar<?php echo $proveedor->id_proveedor ?>">Eliminar</a></td>                                           
                                         </tr>
 
                                          <!--Modal Editar usuario-->

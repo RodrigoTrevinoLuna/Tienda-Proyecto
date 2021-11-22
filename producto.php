@@ -61,7 +61,7 @@
                         <h2 class="titulo"> Productos</h2>
                         <div class="a">
                             <div>
-                                <a href="php/Imprimir/ImprimirProductos.php" target="_blank"><button class="btn-imprimir">Imprimir</button></a>
+                                <a href="php/Imprimir/ImprimirProductos.php" style="text-decoration:none" target="_blank"><button class="btn-imprimir">Imprimir</button></a>
                             </div>
                         </div>
                             <!--PANEL IZQUIERDO-->
@@ -87,7 +87,7 @@
                                             <td><?php echo $producto->codigo ?></td>
                                             <td><?php echo $producto->item ?></td>
                                             <td><?php echo $producto->nombre ?></td>
-                                            <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $producto->id ?>">Editar</a><a href="#" type="button" data-open="modalEliminar<?php echo $producto->id ?>">Eliminar</a></td>
+                                            <td class="accion" ><a href="#" type="button" style="text-decoration:none" data-open="modal1<?php echo $producto->id ?>">Editar</a><a href="#" style="text-decoration:none" type="button" data-open="modalEliminar<?php echo $producto->id ?>">Eliminar</a></td>
                                         </tr>
                                          <!--Modal Editar producto-->
                                     <div class="modal" id="modal1<?php echo $producto->id ?>" data-animation="slideInOutLeft">

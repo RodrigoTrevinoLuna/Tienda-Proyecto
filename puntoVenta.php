@@ -103,7 +103,7 @@
                                             <td class="P"><?php echo $producto->item ?></td>
                                             <td ><?php echo $producto->precioVenta ?></td>
                                             
-                                            <td class="accion"><a href="#"  type="button" data-open="modal1<?php echo $producto->id ?>">Editar</a></td>
+                                            <td class="accion"><a href="#" style="text-decoration:none" type="button" data-open="modal1<?php echo $producto->id ?>">Editar</a></td>
                                         </tr>
                                         <!--Modal Editar usuario-->
                                     <div class="modal" id="modal1<?php echo $producto->id ?>" data-animation="slideInOutLeft">

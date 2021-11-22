@@ -223,3 +223,8 @@ form>p{
 .filtro>div:first-child{
     padding-right: 15px;
 }
+
+.btn-imprimir{
+    text-decoration: none;
+    background: #18975c;
+}

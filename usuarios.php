@@ -159,7 +159,7 @@
                                         <td><?php echo $usuario->telefono ?></td>
                                         <td ><?php echo $usuario->direccion ?></td>
                                         <td ><?php echo $usuario->Permiso ?></td>
-                                        <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $usuario->id_usuario ?>">Editar</a><a href="#" type="button" data-open="modaleliminar<?php echo $usuario->id_usuario ?>">Eliminar</a></td>
+                                        <td class="accion" ><a href="#" style="text-decoration:none" type="button" data-open="modal1<?php echo $usuario->id_usuario ?>">Editar</a><a href="#" style="text-decoration:none" type="button" data-open="modaleliminar<?php echo $usuario->id_usuario ?>">Eliminar</a></td>
                                     </tr>
 
                                     <!--Modal Editar usuario-->

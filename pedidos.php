@@ -103,7 +103,7 @@
                                                 <td class="P"><?php echo $pedido -> stock?></td>
                                                 <td class="P"><?php echo $pedido -> nombre?></td>
                                                 <td><?php echo $pedido -> pedir?></td>
-                                                <td class="accion" ><a href="#" type="button" data-open="modal1<?php echo $pedido->id_pedido ?>">Editar</a><a href="#" type="button" data-open="modaleliminar<?php echo $pedido->id_pedido ?>">Eliminar</a></td>
+                                                <td class="accion" ><a href="#" style="text-decoration:none" type="button" data-open="modal1<?php echo $pedido->id_pedido ?>">Editar</a><a href="#" style="text-decoration:none" type="button" data-open="modaleliminar<?php echo $pedido->id_pedido ?>">Eliminar</a></td>
                                             </tr>
 
  <!--Modal Editar usuario-->
