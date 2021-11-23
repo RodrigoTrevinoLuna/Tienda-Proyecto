@@ -42,7 +42,7 @@ if ($indice === false) {
     $cantidadExistente = $_SESSION["carrito"][$indice]->cantidad;
     # si al sumarle uno supera lo que existe, no se agrega
     if ($cantidadExistente + 1 > $producto->stock) {
-        header("Location: ./vender.php?status=5");
+        header("Location: ./cajero.php?status=5");
         exit;
     }
     $_SESSION["carrito"][$indice]->cantidad++;
