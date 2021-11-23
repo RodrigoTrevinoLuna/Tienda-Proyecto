@@ -17,7 +17,7 @@ $unidadesPedidas = $_POST["unidadesPedidas"];
         $sentenciaD = $base_de_datos->prepare("DELETE FROM pedidos WHERE id_pedido = ?;");
         $resultadoD = $sentenciaD->execute([$idpedido]);
         if($resultadoD === TRUE){
-            header("Location: ../entrada.php");
+            header("Location: ../inventario.php");
             exit;
         }
         

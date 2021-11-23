@@ -74,7 +74,7 @@
                             <h1 class="titulo-pedidos">Producto en Venta</h1>
                             <br>
                             <div class="buscar">
-                                <label>Buscar:</label><input type="text">
+                                <div><label class="text-light">Buscar:</label><input type="text" name="search" id="search"></div>
                             </div>
                             <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
                             <?php
@@ -82,7 +82,7 @@
                                 $sentencia = $base_de_datos->query("SELECT * FROM productos where not precioVenta=0");
                                 $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             ?>
-                                <table  >
+                                <table id="mytable" >
                                     <thead>
                                     
                                         <tr>
@@ -98,7 +98,7 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach($productos as $producto){ ?>
-                                        <tr class="fila">
+                                        <tr class="fila" id="buscarTR">
                                             <td ><?php echo $producto->codigo ?></td>
                                             <td class="P"><?php echo $producto->item ?></td>
                                             <td ><?php echo $producto->precioVenta ?></td>
@@ -193,8 +193,26 @@
 
     </div> <!--final DIV container-->
     
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="JS/modal.js"></script>
+    
+    <script>
+         // Write on keyup event of keyword input element
+        $(document).ready(function(){
+        $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#mytable tbody #buscarTR"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+        $(this).hide();
+        
+        else
+        $(this).show();
+        
+        });
+        });
+        });
+    </script>
 </body>
 </html>
 

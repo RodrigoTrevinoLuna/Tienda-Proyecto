@@ -60,8 +60,9 @@
                     <div class="contenedor">
                         <h2 class="titulo"> Productos</h2>
                         <div class="a">
-                            <div>
-                                <a href="php/Imprimir/ImprimirProductos.php" style="text-decoration:none" target="_blank"><button class="btn-imprimir">Imprimir</button></a>
+                            <div style="display:flex;">
+                                <div style="padding-right:30px"><label class="text-light">Buscar:</label><input type="text" name="search" id="search"></div>
+                                <div><a href="php/Imprimir/ImprimirProductos.php" style="text-decoration:none" target="_blank"><button class="btn-imprimir">Imprimir</button></a></div>
                             </div>
                         </div>
                             <!--PANEL IZQUIERDO-->
@@ -72,7 +73,7 @@
                                         $productos = $sentencia2->fetchAll(PDO::FETCH_OBJ);
                                     ?>
                                    
-                                <table >
+                                <table id="mytable">
                                     <thead>
                                         <tr class="item">
                                             <th class="unidadN">CLAVE</th>
@@ -83,7 +84,7 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach($productos as $producto){ ?>
-                                        <tr class="fila">
+                                        <tr class="fila" id="buscarTR">
                                             <td><?php echo $producto->codigo ?></td>
                                             <td><?php echo $producto->item ?></td>
                                             <td><?php echo $producto->nombre ?></td>
@@ -214,5 +215,23 @@
 
     </div>
     <script src="JS/modal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+         // Write on keyup event of keyword input element
+        $(document).ready(function(){
+        $("#search").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#mytable tbody #buscarTR"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+        $(this).hide();
+        
+        else
+        $(this).show();
+        
+        });
+        });
+        });
+    </script>
 </body>
 </html>
