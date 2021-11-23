@@ -87,7 +87,7 @@
                                             <td class="nameP">CLAVE</td>
                                             <td class="unidadI">ITEM</td>
                                             <td class="unidadI">PROVEEDOR</td>
-                                            <td class="unidadN">IMPORTE</td>
+                                            <td class="unidadN">PRECIO COMPRA</td>
                                             <td class="unidadN">UNIDADES Stock</td>
                                             
                                         </tr>
