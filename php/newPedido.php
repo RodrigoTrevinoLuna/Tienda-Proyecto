@@ -1,6 +1,8 @@
 <?php 
     include_once "bd.php";
+    
     $id = $_POST["id"];
+    if(!isset($id)){header("Location: ../pedidos.php");}
     $pedir = $_POST["pedir"];
     date_default_timezone_set("America/Monterrey");
     $hoy = date("Y-m-d H:i:s");

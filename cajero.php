@@ -169,17 +169,17 @@ if(!isset($_SESSION["permiso"])){
 
         <button class="btn-opcion" type="button" data-open="modalBuscar" accesskey="3">
             <img src="imagenes/buscar.png">
-            <p>[3] Buscar</p>
+            <p>[1] Buscar</p>
         </button>
 
         <button type="submit" class="btn-opcion"  type="button" data-open="modalCobrar" accesskey="3">
             <img src="imagenes/cobrar.png">
-            <p>[1] Cobrar</p>
+            <p>[2] Cobrar</p>
         </button>
 
         <button accesskey="6" class="btn-opcion" role="link" onclick="window.location='php/cancelarVenta.php'" >
             <img src="imagenes/cancelar-venta.png">
-             [6] Cancelar Venta
+             [3] Cancelar Venta
             
         </button>
         
