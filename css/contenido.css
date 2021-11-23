@@ -132,4 +132,16 @@ a:hover p{
     width: 100vw;
 }
 
-
+.btn-imprimir{
+    
+    text-decoration: none;
+ background: #002973;
+ color: white;
+}
+.btn-imprimir:hover{
+    cursor: pointer;
+}
+.btn-imprimir:active{
+    background: white;
+    color: black;
+}

@@ -226,5 +226,15 @@ form>p{
 
 .btn-imprimir{
     text-decoration: none;
-    background: #18975c;
+    background: #002973;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn-imprimir:hover{
+    cursor: pointer;
+}
+.btn-imprimir:active{
+    background: white;
+    color: black;
 }

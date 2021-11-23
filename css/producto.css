@@ -87,7 +87,6 @@ table{
 
    .btn-imprimir{
        position: relative;
-       
    }
 
 /* Panel derecho formulario*/
@@ -134,7 +133,7 @@ select{
 }
 
 button{
-    background: rgba(128, 128, 128, 0.26);
+    background: #18975c;
     box-shadow: 2px 2px grey;
     border-radius: 5px 5px 5px 5px;
     padding: 0px 15px 0px 15px;
