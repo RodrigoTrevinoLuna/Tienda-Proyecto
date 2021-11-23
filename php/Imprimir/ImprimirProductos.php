@@ -39,8 +39,8 @@ $pdf->Cell(15);
 $pdf->Cell(20, 10,'Clave', 1, 0,'C',1);
 $pdf->Cell(40, 10,'Item', 1, 0,'C',1);
 $pdf->Cell(40, 10,'Proveedor', 1, 0,'C',1);
-$pdf->Cell(30, 10,'Precio Venta', 1, 0,'C',1);
-$pdf->Cell(30, 10,'Precio Compra', 1, 1,'C',1);
+$pdf->Cell(30, 10,'Precio Compra', 1, 0,'C',1);
+$pdf->Cell(30, 10,'Precio Venta', 1, 1,'C',1);
 
 
 $sentencia = $base_de_datos->query("SELECT * FROM productos,proveedores WHERE productos.id_proveedor = proveedores.id_proveedor;");
