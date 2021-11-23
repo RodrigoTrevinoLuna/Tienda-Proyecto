@@ -99,7 +99,7 @@
                                         $productosB = $sentenciaB->fetchAll(PDO::FETCH_OBJ);
                                     ?>
                                     <?php foreach($productosB as $producto){ ?>
-                                        <tr class="fila">
+                                        <tr class="fila" id="buscarTR">
                                             <td><?php echo $producto->codigo?></td>
                                             <td class="P"><?php echo $producto->item?></td>
                                             <td class="P"><?php echo $producto->nombre?></td>
@@ -111,7 +111,9 @@
                                      
                                        
                                         <!--No borrar-->
+                                        
                                         <tr><td></td><td></td><td></td><td></td><td class="accion"></td></tr>
+                                        
                                     </tbody>
                                 </table>
                         </div>
@@ -177,7 +179,7 @@
         $("#search").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
-        $.each($("#mytable tbody tr"), function() {
+        $.each($("#mytable tbody #buscarTR"), function() {
         if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
         $(this).hide();
         
