@@ -74,7 +74,7 @@
                             <h1 class="titulo-pedidos">Producto en Venta</h1>
                             <br>
                             <div class="buscar">
-                                <div><label class="text-light">Buscar:</label><input type="text" name="search" id="search"></div>
+                                <div><label class="text-light">Buscar:</label><input class="buscador" type="text" name="search" id="search"></div>
                             </div>
                             <div class="tabla my-custom-scrollbar table-wrapper-scroll-y">
                             <?php
@@ -89,7 +89,6 @@
                                             <td class="nameP">CLAVE</td>
                                             <td class="unidadI">ITEM</td>
                                             <td class="unidadN">PRECIO VENTA</td>
-                                            
                                             <td class="unidadN">ACCIÓN</td>
                                             
                                             
@@ -175,7 +174,7 @@
                         
                             <div>
                                 <label>PrecioVenta</label><section>:</section>
-                                <input type="number" name="venta" min="1">
+                                <input class="input" type="number" name="venta" min="1">
                             </div>
                             
                             <hr>

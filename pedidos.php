@@ -258,7 +258,7 @@
                                    
                                     <div>
                                         <label>Pedir</label><section>:</section>
-                                        <input type="number" name="pedir">
+                                        <input class="input" type="number" name="pedir">
                                     </div>
                                     <hr>
                                     <div>

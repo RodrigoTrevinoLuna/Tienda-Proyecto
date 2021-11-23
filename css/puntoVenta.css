@@ -214,9 +214,17 @@ form>p{
       right: 70px;
       padding-bottom: 15px;
       } 
-
-
-    
+      
+      .input{
+        box-shadow: 2px 2px #888888;
+            border-radius: 15px;
+            height: 20px;
+            padding: 5px 0px 5px 20px;
+            background: rgba(128, 128, 128, 0.26);
+            font-size: 15px;
+            outline-color: grey;
+            border: 1.5px var(--bg-P) solid;
+    }
     
     /*
     

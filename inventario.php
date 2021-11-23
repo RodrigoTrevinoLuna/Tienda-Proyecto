@@ -74,7 +74,7 @@
                                <br>
                                <div class="filtro">
                                
-                                   <div><label class="text-light">Buscar:</label><input class="buscar" type="text" name="search" id="search"></div>
+                                   <div><label class="text-light">Buscar:</label><input class="buscador" type="text" name="search" id="search"></div>
                                    <div><a href="php/Imprimir/ImprimirInventario.php" style="text-decoration:none" target="_blank"><button class="btn-imprimir">Imprimir</button></a></div>
                                   
                                </div>
@@ -152,7 +152,7 @@
                                 <input style="display: none;" type="text" name="idpedido" value="<?php echo $producto->id_pedido?>">
                                 <input style="display: none;" type="text" name="unidadesPedidas" value="<?php echo $producto->pedir?>">
                                 <label>Importe Total</label><section>:</section>
-                                <input type="number" min="1" name="importe" >
+                                <input class="input" type="number" min="1" name="importe" >
                             </div>
                             
                             
