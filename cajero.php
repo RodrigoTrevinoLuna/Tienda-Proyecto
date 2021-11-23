@@ -140,7 +140,7 @@ if(!isset($_SESSION["permiso"])){
                                             
                                             <td><?php echo $producto->cantidad?></td>
                                             <td><?php echo $producto->total?></td>
-                                            <td id="contenido"><a href="<?php echo "php/quitarDelCarrito.php?indice=" . $indice?>" >Quitar</a></td>
+                                            <td id="contenido"><a href="<?php echo "php/quitarDelCarrito.php?indice=". $indice?>"style="text-decoration:none" >Quitar</a></td>
                                             
                                         </tr>
                                             <?php } ?>
