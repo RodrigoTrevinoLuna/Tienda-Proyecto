@@ -132,8 +132,8 @@ a:hover p{
     width: 100vw;
 }
 
+/*Boton imprimir*/
 .btn-imprimir{
-    
     text-decoration: none;
  background: #002973;
  color: white;
@@ -144,4 +144,26 @@ a:hover p{
 .btn-imprimir:active{
     background: white;
     color: black;
+}
+
+input{
+    box-shadow: 2px 2px #888888;
+    border-radius: 15px;
+    height: 20px;
+    padding: 5px 0px 5px 20px;
+    background: rgba(128, 128, 128, 0.26);
+    font-size: 15px;
+    outline-color: grey;
+    border: 1.5px var(--bg-P) solid;
+}
+
+.buscar{
+    box-shadow: 2px 2px #888888;
+    border-radius: 15px;
+    height: 20px;
+    padding: 5px 0px 5px 20px;
+    background: rgba(128, 128, 128, 0.26);
+    font-size: 15px;
+    outline-color: grey;
+    border: 1.5px var(--bg-P) solid;
 }

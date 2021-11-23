@@ -2,8 +2,6 @@
     width: 100%;
     
 }
-
-
 .titulo-pedidos{
     width: 100%;
     text-align: center;
@@ -103,4 +101,13 @@ thead>tr>td{
 .filtro>div:first-child{
     padding-right: 15px;
 }
-
+.buscar{
+    box-shadow: 2px 2px #888888;
+    border-radius: 15px;
+    height: 20px;
+    padding: 5px 0px 5px 20px;
+    background: rgba(128, 128, 128, 0.26);
+    font-size: 15px;
+    outline-color: grey;
+    border: 1.5px var(--bg-P) solid;
+}

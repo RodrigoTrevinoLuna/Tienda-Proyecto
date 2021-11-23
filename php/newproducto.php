@@ -4,7 +4,7 @@
     $item = $_POST["item"];
     $proveedor = $_POST["proveedor"];
 
-    
+    if(!isset($proveedor)){header("Location: ../producto.php");}
     $sentencia = $base_de_datos->prepare("INSERT INTO productos(codigo, item, id_proveedor) VALUES (?,?,?)");
     $resultado = $sentencia->execute([$clave, $item, $proveedor]);
 

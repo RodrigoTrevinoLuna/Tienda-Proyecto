@@ -74,7 +74,7 @@
                                <br>
                                <div class="filtro">
                                
-                                   <div><label class="text-light">Buscar:</label><input type="text" name="search" id="search"></div>
+                                   <div><label class="text-light">Buscar:</label><input class="buscar" type="text" name="search" id="search"></div>
                                    <div><a href="php/Imprimir/ImprimirInventario.php" style="text-decoration:none" target="_blank"><button class="btn-imprimir">Imprimir</button></a></div>
                                   
                                </div>

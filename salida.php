@@ -77,7 +77,7 @@ $ventas = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <br>
                             <div class="filtro" style="position:relative; right:200px" >
                                 
-                            <div><label class="text-light">Buscar:</label><input type="text" name="search" id="search"></div>
+                            <div><label class="text-light">Buscar:</label><input class="buscar" type="text" name="search" id="search"></div>
                             </div>
                             
                                 <table style="width:100%" id="mytable">
