@@ -169,6 +169,8 @@
                 </div>
 
     </div> <!--final DIV container-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
          // Write on keyup event of keyword input element
         $(document).ready(function(){
